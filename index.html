@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#153b46">
+  <meta name="color-scheme" content="light">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Grammar Sprint">
+  <meta name="description" content="RUB Grammar BM exam trainer for Sommersemester 2026">
+  <title>Grammar Sprint · RUB Grammar BM</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">RUB · Grammar BM · SoSe 2026</p>
+        <h1>Grammar Sprint</h1>
+      </div>
+      <div class="exam-chip" aria-label="Exam date and countdown">
+        <span>Central exam</span>
+        <strong>Fri · 24 Jul · 14:00</strong>
+        <small id="exam-countdown">Calculating…</small>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Study sections">
+      <button class="tab is-active" data-view="home">Plan</button>
+      <button class="tab" data-view="cards">Cards</button>
+      <button class="tab" data-view="practice">Drills</button>
+      <button class="tab" data-view="translation">Translation</button>
+      <button class="tab" data-view="exam">Mock exam</button>
+      <button class="tab" data-view="sheet">Quick sheet</button>
+    </nav>
+
+    <main>
+      <section id="view-home" class="view is-active" aria-labelledby="home-title">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">Three-day exam sprint</p>
+            <h2 id="home-title">Recognise the rule. Apply it. Translate it.</h2>
+            <p>This trainer follows the official SoSe 2026 reader and the six-part Moodle mock. Start with the diagnostic, repair weak rules and finish with the full 100-point simulation.</p>
+          </div>
+          <div class="hero-actions">
+            <button id="start-diagnostic" class="button primary">Start 20-question diagnostic</button>
+            <a class="button ghost button-link" href="Grammar%20BM%20-%20Complete%20Exam%20Guide.pdf" target="_blank" rel="noopener">Open complete guide</a>
+            <a class="button ghost button-link" href="Grammar%20BM%20-%20Last-Minute%20Guide.pdf" target="_blank" rel="noopener">Open last-minute PDF</a>
+          </div>
+        </div>
+
+        <div class="metrics" aria-label="Progress overview">
+          <article class="metric"><span>Core cards mastered</span><strong id="metric-mastered">0 / 0</strong></article>
+          <article class="metric"><span>Drill accuracy</span><strong id="metric-accuracy">—</strong></article>
+          <article class="metric"><span>Mistakes to revisit</span><strong id="metric-mistakes">0</strong></article>
+          <article class="metric"><span>Best mock score</span><strong id="metric-mock">—</strong></article>
+        </div>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Official blueprint</p>
+              <h2>What the 100 points actually test</h2>
+            </div>
+            <span class="tag">90 minutes</span>
+          </div>
+          <div class="exam-map" role="table" aria-label="Official mock exam sections">
+            <div class="exam-map-head" role="row"><span>Section</span><span>Items</span><span>Points</span></div>
+            <div role="row"><b>Non-finite verb forms</b><span>15 gaps</span><strong>15</strong></div>
+            <div role="row"><b>Tense &amp; aspect</b><span>20 gaps</span><strong>20</strong></div>
+            <div role="row"><b>Modal items</b><span>15 gaps</span><strong>15</strong></div>
+            <div role="row"><b>Relative clauses</b><span>10 gaps</span><strong>10</strong></div>
+            <div role="row"><b>Theory &amp; analysis</b><span>15 MC</span><strong>15</strong></div>
+            <div role="row"><b>Translation</b><span>10 sentences</span><strong>25</strong></div>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">21–24 July</p>
+              <h2>Focused study route</h2>
+            </div>
+            <button id="reset-progress" class="button ghost">Reset progress</button>
+          </div>
+          <div id="study-plan" class="plan-list"></div>
+        </section>
+
+        <section class="section-block warning-block">
+          <p class="eyebrow">High-yield correction</p>
+          <h2>Translation is a quarter of the exam.</h2>
+          <p>Do not spend all your time memorising lists. Every translation mixes several targets: tense, modal meaning, non-finite form, relative structure, inversion or article choice. Use the Translation Lab without looking at the model first.</p>
+        </section>
+
+        <section class="section-block source-block">
+          <p class="eyebrow">Source priority</p>
+          <h2>Current official material wins.</h2>
+          <ol class="morning-list">
+            <li>SoSe 2026 Theory Reader</li>
+            <li>Official Moodle mock with Sidelya’s answer feedback</li>
+            <li>New-format tasks marked relevant from SoSe 2026</li>
+            <li>Old exams only for extra patterns and common traps</li>
+          </ol>
+        </section>
+      </section>
+
+      <section id="view-cards" class="view" aria-labelledby="cards-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Active recall</p>
+            <h2 id="cards-title">Rule cards</h2>
+          </div>
+          <div class="controls compact">
+            <label>Topic
+              <select id="card-category"><option value="All">All topics</option></select>
+            </label>
+            <label>Set
+              <select id="card-priority">
+                <option value="core">Core first</option>
+                <option value="all">All cards</option>
+                <option value="mistakes">Weak cards</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="progress-line"><span id="card-progress"></span></div>
+        <article id="flashcard" class="flashcard" aria-live="polite">
+          <div class="flashcard-topline">
+            <span id="card-category-label" class="tag"></span>
+            <span id="card-counter"></span>
+          </div>
+          <div id="card-front" class="card-face">
+            <p class="prompt">Explain the rule, then produce your own example.</p>
+            <h3 id="card-term"></h3>
+            <button id="reveal-card" class="button primary">Reveal answer</button>
+          </div>
+          <div id="card-back" class="card-face is-hidden">
+            <h3 id="card-back-term"></h3>
+            <dl>
+              <div><dt>Rule</dt><dd id="card-definition"></dd></div>
+              <div><dt>Exam cue</dt><dd id="card-cue"></dd></div>
+              <div><dt>Example</dt><dd id="card-example"></dd></div>
+              <div><dt>Trap</dt><dd id="card-trap"></dd></div>
+              <div><dt>Source</dt><dd id="card-source"></dd></div>
+            </dl>
+            <div class="rating-row" aria-label="Rate this card">
+              <button class="button danger" data-rating="again">Again</button>
+              <button class="button" data-rating="hard">Hard</button>
+              <button class="button success" data-rating="good">Got it</button>
+            </div>
+          </div>
+        </article>
+        <div class="under-card-actions"><button id="shuffle-cards" class="button ghost">Shuffle deck</button></div>
+      </section>
+
+      <section id="view-practice" class="view" aria-labelledby="practice-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Immediate feedback</p>
+            <h2 id="practice-title">Moodle-style drills</h2>
+          </div>
+          <div class="controls compact">
+            <label>Topic
+              <select id="practice-category"><option value="All">Mixed</option></select>
+            </label>
+            <label>Questions
+              <select id="practice-count">
+                <option value="10">10</option>
+                <option value="20" selected>20</option>
+                <option value="30">30</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div id="practice-start" class="empty-state">
+          <p>Choose a topic or run a mixed diagnostic. Every answer includes a short explanation and an official-reader source.</p>
+          <button id="start-practice" class="button primary">Start drill</button>
+        </div>
+        <div id="practice-session" class="quiz-shell is-hidden" aria-live="polite"></div>
+      </section>
+
+      <section id="view-translation" class="view" aria-labelledby="translation-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">25% of the exam</p>
+            <h2 id="translation-title">Translation Lab</h2>
+          </div>
+          <div class="controls compact">
+            <label>Set
+              <select id="translation-set">
+                <option value="all">All prompts</option>
+                <option value="weak">Saved mistakes</option>
+                <option value="unseen">Unseen first</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="progress-line"><span id="translation-progress"></span></div>
+        <article class="translation-card">
+          <div class="translation-topline"><span class="tag">German → English</span><span id="translation-counter"></span></div>
+          <p id="translation-german" class="translation-prompt"></p>
+          <label class="answer-label" for="translation-answer">Your translation</label>
+          <textarea id="translation-answer" rows="4" spellcheck="true" placeholder="Translate without looking at the model answer…"></textarea>
+          <div id="translation-before-actions" class="quiz-actions">
+            <button id="reveal-translation" class="button primary">Reveal model &amp; targets</button>
+          </div>
+          <div id="translation-feedback" class="translation-feedback is-hidden">
+            <p class="eyebrow">Model answer</p>
+            <p id="translation-model" class="model-answer"></p>
+            <div id="translation-alternatives"></div>
+            <p class="eyebrow target-heading">Grammar targets</p>
+            <ul id="translation-targets" class="target-list"></ul>
+            <p id="translation-note" class="micro-note is-hidden"></p>
+            <div class="rating-row">
+              <button class="button danger" data-translation-rating="again">Needs work</button>
+              <button class="button" data-translation-rating="hard">Almost</button>
+              <button class="button success" data-translation-rating="good">Correct</button>
+            </div>
+          </div>
+        </article>
+        <div class="under-card-actions"><button id="shuffle-translations" class="button ghost">Shuffle prompts</button></div>
+      </section>
+
+      <section id="view-exam" class="view" aria-labelledby="exam-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Feedback only after submission</p>
+            <h2 id="exam-title">100-point mock exam</h2>
+          </div>
+          <span class="tag">85 items · 90 minutes</span>
+        </div>
+        <div id="exam-start" class="exam-intro">
+          <p>The simulation uses the exact official point split. For objective browser scoring, the ten translation items ask you to select the best complete translation. Use the Translation Lab for real free-response practice.</p>
+          <ul>
+            <li>15 non-finite items · 15 points</li>
+            <li>20 tense/aspect items · 20 points</li>
+            <li>15 modal items · 15 points</li>
+            <li>10 relative-clause items · 10 points</li>
+            <li>15 theory items · 15 points</li>
+            <li>10 translation items · 25 points</li>
+          </ul>
+          <div id="exam-start-actions" class="center-actions">
+            <button id="start-exam" class="button primary">Start new 90-minute mock</button>
+            <button id="resume-exam" class="button ghost is-hidden">Resume saved mock</button>
+          </div>
+        </div>
+        <div id="exam-session" class="quiz-shell is-hidden" aria-live="polite"></div>
+      </section>
+
+      <section id="view-sheet" class="view quick-sheet" aria-labelledby="sheet-title">
+        <div class="section-heading no-print">
+          <div>
+            <p class="eyebrow">Last-minute reference</p>
+            <h2 id="sheet-title">Grammar BM Quick Sheet</h2>
+          </div>
+          <div class="controls">
+            <a class="button ghost button-link" href="Grammar%20BM%20-%20Last-Minute%20Guide.pdf" target="_blank" rel="noopener">Open PDF</a>
+            <button id="print-sheet" class="button primary">Print / Save as PDF</button>
+          </div>
+        </div>
+
+        <div class="sheet-title print-only">
+          <p>RUB · Grammar BM · Sommersemester 2026</p>
+          <h1>Grammar BM — Last-Minute Guide</h1>
+        </div>
+
+        <section class="sheet-section">
+          <h2>1 · Non-finites: decide by governor + meaning</h2>
+          <div class="comparison-table" role="table">
+            <div class="comparison-head" role="row"><span>Pattern</span><span>Use</span><span>Example</span></div>
+            <div role="row"><b>stop doing</b><span>end the activity</span><span>stop smoking</span></div>
+            <div role="row"><b>stop to do</b><span>pause in order to act</span><span>stop to smoke</span></div>
+            <div role="row"><b>remember doing</b><span>past memory</span><span>remember meeting her</span></div>
+            <div role="row"><b>remember to do</b><span>future obligation</span><span>remember to call</span></div>
+            <div role="row"><b>try doing</b><span>test a method</span><span>try restarting it</span></div>
+            <div role="row"><b>try to do</b><span>make an effort</span><span>try to open it</span></div>
+            <div role="row"><b>need doing</b><span>passive meaning</span><span>needs repairing</span></div>
+          </div>
+          <p class="micro-note"><b>Always:</b> preposition + -ing; make/let/have + object + bare infinitive; look forward to + -ing; had better/would rather + bare infinitive.</p>
+        </section>
+
+        <section class="sheet-section">
+          <h2>2 · Tense &amp; aspect triggers</h2>
+          <div class="compact-grid">
+            <article><strong>Simple present</strong><p>habit, truth, performative, timetable, future time/if clause, state verb.</p></article>
+            <article><strong>Present progressive</strong><p>ongoing, temporary, annoyance with always, arranged future.</p></article>
+            <article><strong>Present perfect</strong><p>unspecified past, current result, period leading to now.</p></article>
+            <article><strong>Present perfect progressive</strong><p>duration/activity/repetition or visible secondary result.</p></article>
+            <article><strong>Past progressive</strong><p>background, interruption, simultaneity, temporary past habit.</p></article>
+            <article><strong>Past perfect</strong><p>earlier event before an established past point.</p></article>
+          </div>
+        </section>
+
+        <section class="sheet-section">
+          <h2>3 · Future and conditional map</h2>
+          <div class="device-grid">
+            <span><b>will</b> spontaneous decision / factual prediction</span>
+            <span><b>going to</b> present intention / visible evidence</span>
+            <span><b>present progressive</b> arranged future</span>
+            <span><b>simple present</b> timetable / future sub-clause</span>
+          </div>
+          <div class="comparison-table small-table" role="table">
+            <div class="comparison-head" role="row"><span>Conditional</span><span>If-clause</span><span>Main clause</span></div>
+            <div role="row"><b>probable</b><span>present</span><span>will + infinitive</span></div>
+            <div role="row"><b>improbable</b><span>past</span><span>would + infinitive</span></div>
+            <div role="row"><b>impossible past</b><span>past perfect</span><span>would have + participle</span></div>
+          </div>
+        </section>
+
+        <section class="sheet-section">
+          <h2>4 · Modal meaning first, form second</h2>
+          <div class="device-grid">
+            <span><b>must</b> deduction / speaker authority</span>
+            <span><b>have to</b> external obligation</span>
+            <span><b>can’t have</b> past impossibility</span>
+            <span><b>had better</b> urgent advice + consequence</span>
+            <span><b>was able to</b> specific fulfilled past ability</span>
+            <span><b>needn’t have</b> happened but was unnecessary</span>
+            <span><b>be to</b> order / formal plan / fate</span>
+            <span><b>be supposed to</b> rumour / expected duty</span>
+          </div>
+          <p class="micro-note"><b>Critical:</b> mustn’t = prohibition; don’t have to = no obligation. may not = possibly not or no permission; cannot = impossibility.</p>
+        </section>
+
+        <section class="sheet-section">
+          <h2>5 · Relative clauses</h2>
+          <div class="two-question-grid">
+            <article><strong>Defining</strong><p>No commas. that/which/who possible. Zero only when the pronoun is the object.</p></article>
+            <article><strong>Non-defining</strong><p>Commas. No that and no zero pronoun. Can add removable information.</p></article>
+          </div>
+          <ul>
+            <li><b>Fronted preposition:</b> to whom / about which — never to that.</li>
+            <li><b>Partitive:</b> ten people, few of whom… / five books, all of which…</li>
+            <li><b>Connective which:</b> can refer to the whole preceding clause.</li>
+            <li><b>What:</b> contains its own antecedent = “that which”.</li>
+          </ul>
+        </section>
+
+        <section class="sheet-section">
+          <h2>6 · Word order and inversion</h2>
+          <div class="compact-grid">
+            <article><strong>Normal mid position</strong><p>before lexical verb; after be; after first auxiliary.</p></article>
+            <article><strong>Degree/manner</strong><p>after all auxiliaries: has been completely revised.</p></article>
+            <article><strong>End order</strong><p>manner – place – time; after motion: place – manner – time.</p></article>
+            <article><strong>Inversion</strong><p>negative/restrictive fronting: Never have I… Only then did I…</p></article>
+          </div>
+          <p class="micro-note"><b>Simple verb:</b> add do/does/did + base form. <b>Compound verb:</b> move the existing first auxiliary. No inversion after no doubt, nevertheless or not long after.</p>
+        </section>
+
+        <section class="sheet-section">
+          <h2>7 · Determiner traps</h2>
+          <div class="device-grid">
+            <span><b>few</b> hardly any count nouns</span>
+            <span><b>a few</b> some count nouns</span>
+            <span><b>little</b> hardly any uncountable</span>
+            <span><b>a little</b> some uncountable</span>
+            <span><b>go to court</b> institution</span>
+            <span><b>go to the court</b> specific place</span>
+            <span><b>his hand</b> possessive body part</span>
+            <span><b>hit him in the hand</b> affected body part</span>
+          </div>
+        </section>
+
+        <section class="sheet-section correction-box">
+          <h2>8 · Translation checklist</h2>
+          <ol>
+            <li>Underline the grammatical target before translating.</li>
+            <li>Build the verb phrase first: tense + aspect + modal + non-finite form.</li>
+            <li>Check clause structure: conditional sequence, reported speech, relative case and commas.</li>
+            <li>Check inversion after never/nowhere/only + fronted phrase.</li>
+            <li>Check articles, countability, possessives and natural collocations.</li>
+            <li>Read the complete English sentence once for meaning and once for form.</li>
+          </ol>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <span>Based on the official SoSe 2026 Theory Reader and Moodle mock feedback.</span>
+      <span>Progress stays on this device · Works offline after first load.</span>
+    </footer>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

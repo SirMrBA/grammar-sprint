@@ -1,0 +1,14 @@
+{
+  "name": "Grammar Sprint · RUB Grammar BM",
+  "short_name": "Grammar Sprint",
+  "description": "Offline-capable Grammar BM exam trainer for Sommersemester 2026",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f2f3ed",
+  "theme_color": "#153b46",
+  "icons": [
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
