@@ -17,8 +17,8 @@ The source is stored in the private repository <https://github.com/SirMrBA/gramm
 
 ## Contents
 
-- 129 rule flashcards across all official topics
-- 174 Moodle-style practice questions with explanations and reader references
+- 130 rule flashcards across all official topics
+- 175 Moodle-style practice questions with explanations and reader references
 - 35 free-response translation prompts with model answers and grammar targets
 - 85-item, 100-point mock exam using the official 15/20/15/10/15/25 point split
 - saved mistakes, card ratings, study-plan checkboxes and mock history
@@ -41,6 +41,7 @@ Press **Ctrl+C** in the Terminal window or close that Terminal window.
 1. Official Grammar BM Theory Reader, SoSe 2026
 2. Official Moodle mock-test feedback
 3. New-format Moodle practice tasks marked relevant from SoSe 2026
-4. Older exams only for extra patterns and common traps
+4. Historical `Sido_Lektuerequizze` chat export for documented corrections and cross-checking
+5. Older exams only for extra patterns and common traps
 
 Progress is stored only in the browser on the current device.

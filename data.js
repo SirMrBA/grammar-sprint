@@ -6,7 +6,7 @@ window.GRAMMAR_DATA = {
     "examLabel": "Fri · 24 Jul · 14:00",
     "durationMinutes": 90,
     "totalPoints": 100,
-    "sourceNote": "Built from the official SoSe 2026 theory reader, Moodle mock-test feedback and new-format practice tasks."
+    "sourceNote": "Built from the official SoSe 2026 theory reader, Moodle mock-test feedback and new-format practice tasks; cross-checked against Sidelya’s historical quiz chat export."
   },
   "categories": [
     {
@@ -1320,6 +1320,17 @@ window.GRAMMAR_DATA = {
       "trap": "Do not write off go we.",
       "priority": "1",
       "source": "Reader p. 37"
+    },
+    {
+      "id": "wo13",
+      "category": "Word Order",
+      "term": "Thirteen types of adverbs",
+      "definition": "The reader lists 13 types: place, definite time, indefinite time, definite frequency, indefinite frequency, manner, degree, certainty, completeness, focusing, emphasizing, connecting and comment adverbs.",
+      "cue": "Count connecting adverbs as their own category.",
+      "example": "however = connecting; fortunately = comment",
+      "trap": "The corrected course quiz answer is 13, not 12.",
+      "priority": "1",
+      "source": "Reader p. 33 + quiz-chat correction"
     },
     {
       "id": "de01",
@@ -3877,6 +3888,22 @@ window.GRAMMAR_DATA = {
       "answer": 2,
       "explanation": "The simple/compound contrast determines whether do-support is required.",
       "source": "Reader pp. 36–37",
+      "difficulty": 1
+    },
+    {
+      "id": "qwo17",
+      "section": "theory",
+      "category": "Word Order",
+      "text": "How many types of adverbs does the course reader list?",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "answer": 3,
+      "explanation": "The corrected quiz answer is 13 because connecting adverbs count as a separate category.",
+      "source": "Reader p. 33 + quiz-chat correction",
       "difficulty": 1
     },
     {
