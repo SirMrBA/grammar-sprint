@@ -492,7 +492,7 @@ const TASKS = {
       R5: { her: ",", ok: false, key: [", where"], also: [", in which"],
         hint: "A comma alone cannot join two clauses. What relative word refers to a place?",
         why: "You saw that the clause needs a comma (good!) – but the relative word was missing.",
-        rule: "Place antecedent + non-defining clause → ‘, where’ (= in which). Rancho Santa Fe is a name → comma.", page: "Reader pp. 27–28" },
+        rule: "Place antecedent + non-defining clause → ‘, where’ (= in which). Rancho Santa Fe is a name → comma. Defining clauses take no comma: at a time when …", page: "Reader pp. 27–28" },
       R6: { her: "C", ok: false, key: [", who"],
         hint: "Look at the end of the clause: ‘…beyond human existence, believed that …’ – there is a comma before the main verb.",
         why: "A contact clause is impossible when the pronoun is the subject (‘they were fascinated’). And the closing comma shows a non-defining clause.",
@@ -540,7 +540,7 @@ const RULES = [
   { group: "Non-finites", items: [
     { id: "r-prep", title: "“Add a preposition when necessary” – check EVERY gap", body: [
       "Verb/adjective + preposition + <b>-ing</b>: insist <b>on</b> doing · be interested <b>in</b> doing · be used <b>to</b> doing · look forward <b>to</b> doing · object <b>to</b> doing · apologise <b>for</b> doing.",
-      "Before you type, ask: does this verb/adjective need a preposition? If yes, the preposition belongs IN the gap."],
+      "Before you type, ask: does this verb/adjective need a preposition? If yes, the preposition belongs IN the gap – unless it is already printed (was used to (do) → just doing)."],
       yours: "insisted <b>traveling</b> → insisted <b>on travelling</b> · interested <b>listening</b> → interested <b>in listening</b>", page: "Reader p. 11" },
     { id: "r-gerund", title: "Gerund-only verbs", body: [
       "suggest · consider (= think about) · avoid · deny · enjoy · give up · mind · risk · imagine · admit · miss · practise · can’t help · it’s worth · feel like.",
@@ -612,7 +612,7 @@ const RULES = [
       "A contact clause contains 0 relative pronouns."],
       yours: "compound <b>which</b> → C · MC: ‘2’ → 0", page: "Reader pp. 27, 29" },
     { id: "r-what", title: "what = that which · of whom / of which", body: [
-      "No noun before the gap → <b>what</b>: <span class='ex'>packed their suitcases for what they thought would be a trip</span>.",
+      "No antecedent at all → <b>what</b> (= the thing that): <span class='ex'>packed their suitcases for what they thought would be a trip</span>. After he / those / anyone → who.",
       "Part of a group: many / some / two / all <b>of whom</b> (people), <b>of which</b> (things)."],
       yours: "for <b>who</b> → what · many <b>who</b> → of whom", page: "Reader pp. 28, 30" }
   ]},
@@ -817,7 +817,7 @@ function renderPlan() {
         <p class="eyebrow">July attempt · 24 Jul 2026</p>
         <h2>36 lost points – and every one of them is fixable.</h2>
         <p>Below is every mistake from the July exam. Correct each one yourself, read why it was wrong, then prove the rule on <b>new</b> sentences. The resit will have new texts – but the same traps.</p>
-        <div class="btn-row"><button class="button primary" data-go="fix">Start fixing → Tense</button><button class="button" data-go="drills">New drills</button></div>
+        <div class="btn-row"><button class="button primary" data-go="fix">Start fixing → Tense</button><button class="button" data-go="drills">New drills</button><a class="button" href="Grammar%20BM%20-%20Resit%20Cheat%20Sheet.pdf" target="_blank" rel="noopener">Cheat sheet (PDF)</a></div>
       </div>
       <div><div class="big-score">39<small> / 75</small></div><p class="muted small">Grade in July (52%). Biggest leaks: Tense −10 · Modals −9 · Theory MC −7.</p></div>
     </div>
@@ -1147,14 +1147,14 @@ function checkDrill(id, val) {
 function renderDay() {
   $("#view-day").innerHTML = `
     <div class="card">
-      <p class="eyebrow">Friday · 9 Oct · 09:00–11:00 · RUB Online-Exam</p>
-      <h2>Exam-day rules</h2>
+      <div class="task-head"><div><p class="eyebrow">Friday · 9 Oct · 09:00–11:00 · RUB Online-Exam</p>
+      <h2>Exam-day rules</h2></div><a class="button small" href="Grammar%20BM%20-%20Resit%20Cheat%20Sheet.pdf" target="_blank" rel="noopener">Cheat sheet (PDF)</a></div>
       <table class="simple">
         <tr><th>When</th><th>Do this</th></tr>
         <tr><td><b>Before every text</b></td><td>Read the <b>whole</b> text once before filling anything. Both text tasks say “taking the whole context into account”.</td></tr>
-        <tr><td><b>Non-finites</b></td><td>For every gap ask: does the word before it need a preposition? If yes, type it: <span class="kbd">on travelling</span>, <span class="kbd">in listening</span>.</td></tr>
+        <tr><td><b>Non-finites</b></td><td>For every gap ask: does the word before it need a preposition? If yes, type it: <span class="kbd">on travelling</span>, <span class="kbd">in listening</span>. If it is already printed (<i>was used to (do)</i>), type only <span class="kbd">doing</span>.</td></tr>
         <tr><td><b>Tense</b></td><td>Find the narrator’s “now” (will call, regret) vs. the story’s past. Simple past is the default; past perfect only for “earlier than”; progressive for background. If-clauses: look at the main clause first.</td></tr>
-        <tr><td><b>Bracketed adverbs</b></td><td>After the first auxiliary: <span class="kbd">had simply reused</span>, <span class="kbd">would not constantly be</span>; before a simple verb: <span class="kbd">permanently kept</span>.</td></tr>
+        <tr><td><b>Bracketed adverbs</b></td><td>After the first auxiliary: <span class="kbd">had simply reused</span>, <span class="kbd">would not constantly be</span>; before a simple verb: <span class="kbd">permanently kept</span>; degree/manner adverbs after all auxiliaries: <span class="kbd">will have been completely ruined</span>.</td></tr>
         <tr><td><b>Modals</b></td><td>Sure gaps first. Then elimination: if you have used an item twice, check again. Look for signal words: <i>convinced</i> → must · <i>surely … ?</i> → can’t have · <i>…, but</i> → may · <i>better</i> → had · <i>only years later</i> → was to · <i>typical of him</i> → would.</td></tr>
         <tr><td><b>Relatives</b></td><td>Comma test first. Type the comma <b>into</b> the gap: <span class="kbd">, who</span>. Object in a defining clause → <span class="kbd">C</span>. No antecedent → <span class="kbd">what</span>. many/some … → <span class="kbd">of whom</span>.</td></tr>
         <tr><td><b>MC</b></td><td>Underline NOT / do not / how many … not. Condition names go by form. No-inversion list: no doubt, in no time, nevertheless, nonetheless …</td></tr>

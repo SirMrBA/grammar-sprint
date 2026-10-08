@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grammar BM · Resit Cheat Sheet</title>
+<style>
+@page { size: A4; margin: 10mm 11mm 11mm; }
+:root {
+  --ink: #16272c; --muted: #5d6e73; --brand: #153b46; --brand-2: #287080;
+  --gold: #c27c3a; --gold-soft: #f6e6cc; --red: #a23a36; --red-soft: #f7e3e0;
+  --ok-soft: #e1efe4; --line: #cfd8d2; --panel: #f6f6f1;
+}
+* { box-sizing: border-box; }
+html { background: #fff; }
+body { margin: 0; color: var(--ink); background: #fff; font: 8.6pt/1.36 Inter, -apple-system, "Helvetica Neue", Arial, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.wrap { max-width: 190mm; margin: 0 auto; }
+@media screen { .wrap { padding: 16px; } body { font-size: 15px; } }
+h1 { margin: 0; font: 500 19pt/1.1 Georgia, "Times New Roman", serif; color: var(--brand); }
+.sub { margin: 2px 0 8px; color: var(--muted); font-size: 8.4pt; }
+h2 { margin: 9px 0 4px; padding: 3px 7px; font-size: 9.6pt; letter-spacing: .02em; color: #fff; background: var(--brand); border-radius: 5px; break-after: avoid; }
+h2 small { font-weight: 400; opacity: .8; }
+h3 { margin: 6px 0 2px; font-size: 8.8pt; color: var(--brand-2); break-after: avoid; }
+p { margin: 0 0 3px; }
+ul { margin: 0 0 3px; padding-left: 13px; }
+li { margin: 0 0 1.5px; }
+b { font-weight: 700; }
+.cols { columns: 2; column-gap: 7mm; }
+.cols > * { break-inside: avoid; }
+.box { border: 1px solid var(--line); background: var(--panel); border-radius: 7px; padding: 6px 8px; margin: 0 0 6px; break-inside: avoid; }
+.traps { background: var(--red-soft); border-color: #e7c3be; }
+.traps h3, .moodle h3 { margin-top: 0; }
+.traps ol { margin: 0; padding-left: 15px; }
+.traps li { margin-bottom: 2.5px; }
+.moodle { background: var(--gold-soft); border-color: #e9cfa6; }
+.slip { display: block; margin: 2px 0 4px; padding: 3px 6px; background: var(--red-soft); border-radius: 4px; font-size: 8.1pt; break-inside: avoid; }
+.slip::before { content: "July ✗ "; font-weight: 700; color: var(--red); }
+.ok { color: #276245; font-weight: 700; }
+.no { color: var(--red); font-weight: 700; text-decoration: line-through; }
+.pg { color: var(--muted); font-weight: 400; font-size: 7.8pt; }
+table { width: 100%; border-collapse: collapse; margin: 2px 0 5px; font-size: 8.2pt; break-inside: avoid; }
+th, td { text-align: left; vertical-align: top; padding: 2.2px 4px; border-bottom: 1px solid var(--line); }
+th { background: var(--panel); color: var(--brand); font-size: 7.9pt; }
+td:first-child { font-weight: 600; }
+i { font-style: italic; }
+.ex { font-style: italic; color: #2f4a52; }
+.k { font-family: ui-monospace, Menlo, monospace; font-size: 7.9pt; background: #fff; border: 1px solid var(--line); border-radius: 3px; padding: 0 3px; }
+.foot { margin-top: 6px; color: var(--muted); font-size: 7.4pt; }
+.pagebreak { break-before: page; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Grammar BM · Resit Cheat Sheet</h1>
+<p class="sub">Resit Fri 9 Oct 2026 · 09:00–11:00 · RUB Online-Exam · [numbers] = page in the official Theory Reader SoSe 2026 · Trainer: sirmrba.github.io/grammar-sprint-sidelya/resit/</p>
+
+<div class="box traps">
+  <h3>Your 10 July traps – check these first</h3>
+  <ol>
+    <li><b>Add the preposition</b> – it belongs in the gap: insist <b>on</b> travelling · interested <b>in</b> listening. If it is already printed (<i>was used to (do)</i>, <i>looking forward to (enter)</i>), type only the -ing form. <span class="pg">[11–12]</span></li>
+    <li><b>suggest / consider (= think about) + -ing:</b> suggested <span class="ok">going</span> (<span class="no">to go</span>) · considered <span class="ok">leaving</span> (<span class="no">to leave</span>). <span class="pg">[6, 10]</span></li>
+    <li><b>Simple past is the default.</b> Past perfect only if something is <b>earlier</b> than another past point: he <span class="ok">wasn’t</span> there at 8:59 (<span class="no">hadn’t been</span>). <span class="pg">[15–16]</span></li>
+    <li><b>Background in progress → past progressive:</b> we <span class="ok">were having</span> a bad time · somebody <span class="ok">was feeling</span> around in a drawer, and there at the back was … <span class="pg">[16]</span></li>
+    <li><b>Narrator’s NOW inside a past story:</b> whom I <span class="ok">will call</span> “Chuck” for the following story · I <span class="ok">regret</span> that … I would not be telling the truth now … <span class="pg">[14, 17]</span></li>
+    <li><b>Future seen from the past → would (be -ing):</b> we had expected that he <span class="ok">would be standing</span> there. <span class="pg">[17, 19]</span></li>
+    <li><b>If-clause: read the main clause first.</b> would → if + past (<span class="ok">spent</span>) · would have → if + past perfect (<span class="ok">had simply reused</span>). <span class="pg">[18]</span></li>
+    <li><b>Modal signals:</b> <i>convinced</i> → must · <i>Surely …?</i> → can’t have · <i>…, but</i> → may (have) · <i>___ better</i> → had · <i>only years later</i> → was to · <i>typical of him</i> → would · <i>no reason to think</i> → needn’t · <i>feared</i> → might · <i>told us we only ___</i> → had to. <span class="pg">[21–24]</span></li>
+    <li><b>Relatives:</b> after a name → comma: <span class="k">, who</span> · object in a defining clause → <span class="k">C</span> · no antecedent at all (what = the thing that) → <span class="k">what</span>; after he / those / anyone → <span class="k">who</span> · many/some/two → <span class="k">of whom</span> · named place → <span class="k">, where</span> (defining: at a time <span class="k">when</span> · the day <span class="k">C</span>). <span class="pg">[27–30]</span></li>
+    <li><b>MC:</b> regret <b>to</b> = now / regret <b>-ing</b> = past · condition names go by <b>form</b> · a real past (yesterday) is not modal past · contact clause = <b>0</b> pronouns · no commas = only some · <b>no</b> inversion after no doubt / in no time / nonetheless · <b>my own</b>.</li>
+  </ol>
+</div>
+
+<div class="box moodle">
+  <h3>Moodle input rules</h3>
+  <ul>
+    <li>Read the <b>whole text</b> before filling anything (both text tasks say so).</li>
+    <li>Type exactly what goes in the gap – preposition included (<span class="k">on travelling</span>), comma included (<span class="k">, who</span>), <span class="k">C</span> for a contact clause (the exam rule says that if C is possible, you must choose it).</li>
+    <li>Bracketed adverbs: after the <b>first auxiliary</b> (<span class="k">had simply reused</span>, <span class="k">would not constantly be</span>); before a simple verb (<span class="k">permanently kept</span>); degree/manner adverbs after <b>all</b> auxiliaries (<span class="k">will have been completely ruined</span>).</li>
+    <li>Spelling counts: regre<b>tt</b>ed, sto<b>pp</b>ed, prefe<b>rr</b>ed (stressed last syllable doubles; but visited, offered) · trave<b>ll</b>ed BE / traveled AE.</li>
+    <li>Drag &amp; drop: fill the sure gaps first. If you have used an item twice, check again.</li>
+    <li>Time: non-finites 12 · tense 25 · modals 15 · relatives 10 · MC 18 · final check 10 min.</li>
+  </ul>
+</div>
+
+<div class="cols">
+
+<h2>1 · Non-finite verb forms <small>[5–12]</small></h2>
+<h3>Gerund only (-ing)</h3>
+<p>admit · appreciate · avoid · can’t help · can’t stand · carry on · <b>consider</b> (= think about) · contemplate · delay · deny · dislike · enjoy · escape · excuse · fancy · forgive · give up · imagine · involve · keep (on) · mention · mind · miss · practise · prevent · recall · resent · resume · risk · <b>suggest</b> · tolerate</p>
+<p>feel like · it’s no use/good · it’s (not) worth · there’s no point (in) · be busy · burst out · look forward to · prefer doing to doing · nouns: key to · alternative to · hope of · idea of · risk of</p>
+<h3>to-infinitive</h3>
+<p>afford · appear · arrange · ask · choose · claim · decide · demand · expect · fail · happen · hesitate · hope · manage · offer · pretend · promise · refuse · seem · tend · threaten · want · wish · nouns: decision · promise · refusal · permission … to · adjectives: able · likely · pleased · surprised … to</p>
+<h3>Bare infinitive</h3>
+<p>make / let / have sb <b>do</b> · would rather / sooner · rather than · why (not)</p>
+<h3>Either – same meaning</h3>
+<p>begin · start · continue · cease · can’t bear · bother · neglect · omit · fear. But no -ing after -ing: is starting <b>to</b> rise.</p>
+<p>advise · allow · permit · forbid · encourage · urge: <b>+ -ing</b> without a person (I don’t allow smoking) / <b>sb + to</b> (I don’t allow visitors to smoke).</p>
+<h3>Change in meaning</h3>
+<table>
+  <tr><th>verb</th><th>+ -ing</th><th>+ to</th></tr>
+  <tr><td>remember / forget</td><td>memory of the past</td><td>a duty (Remember to call!)</td></tr>
+  <tr><td>regret</td><td>sorry about the past (regret turning down / having turned down)</td><td>sorry about what I’m about to say (regret to inform you)</td></tr>
+  <tr><td>stop</td><td>no longer do it</td><td>in order to do it</td></tr>
+  <tr><td>try</td><td>experiment</td><td>attempt</td></tr>
+  <tr><td>mean</td><td>involve</td><td>intend</td></tr>
+  <tr><td>go on</td><td>continue the same</td><td>next step</td></tr>
+  <tr><td>consider</td><td>think about</td><td>sb to be = regard as</td></tr>
+  <tr><td>be afraid</td><td>of doing (accident)</td><td>to do (in control)</td></tr>
+</table>
+<h3>Preposition → -ing <span class="pg">[11]</span></h3>
+<p>insist <b>on</b> · interested <b>in</b> · succeed <b>in</b> · object <b>to</b> · look forward <b>to</b> · be/get used <b>to</b> · apologise <b>for</b> · think <b>of</b> · instead of · without · by · after · before</p>
+<p><b>used to do</b> = past habit (infinitive marker) · <b>be used to doing</b> = be accustomed (preposition). <span class="pg">[12]</span></p>
+<p><b>need / deserve / require / want + -ing</b> = passive meaning: it needs <b>discussing</b> = it needs <b>to be discussed</b>. <span class="pg">[12]</span></p>
+<p>see / hear / feel sb <b>do</b> = the whole action · sb <b>doing</b> = action in progress (incomplete). <span class="pg">[11]</span></p>
+<span class="slip">suggested to go · insisted traveling · considered to leave · interested listening</span>
+
+<h2>2 · Tense &amp; aspect <small>[13–19]</small></h2>
+<h3>Ask for every gap</h3>
+<p>① Whose time – the story’s past or the narrator’s now? ② Is it <b>earlier</b> than another past point? → past perfect. ③ In progress / background / temporary behaviour? → progressive. ④ Future seen from the past? → would (be -ing). ⑤ An if-clause? → look at the main clause first.</p>
+<h3>Present</h3>
+<p><b>Simple present:</b> habits · timeless truths · commentaries · historic present (also <i>I hear you have finally changed your mind</i>) · timetable future · after when / as soon as / if with future meaning · state verbs (know, believe, belong, see, regret).</p>
+<p><b>Present progressive:</b> incomplete or temporary · <i>always</i> = annoyance · arrangement (We’re spending our holidays in Canada) · be + adjective = temporary behaviour (<i>You are being silly</i>).</p>
+<h3>Past</h3>
+<p><b>Present perfect:</b> unspecified past (just, already, ever) · up to now (for, since) · result. A definite past time (yesterday, in 1997, at 8:59) → <b>simple past</b>.</p>
+<p><b>Past progressive:</b> frame (at 11 I was reading) · time inclusion (When she was having lunch, the phone rang) · simultaneity · temporary habit.</p>
+<p><b>Past perfect:</b> only for something earlier than a past point of orientation (When the police arrived, the thieves had run away).</p>
+<h3>Future <span class="pg">[17]</span></h3>
+<table>
+  <tr><td>will</td><td>spontaneous decision · prediction · promise</td></tr>
+  <tr><td>going to</td><td>present intention · conclusion from evidence</td></tr>
+  <tr><td>present progressive</td><td>intention with present arrangement</td></tr>
+  <tr><td>simple present</td><td>timetable / future as fact</td></tr>
+  <tr><td>will be -ing</td><td>in progress at a future time · matter of course</td></tr>
+  <tr><td>will have done</td><td>completed before a future point (future II)</td></tr>
+</table>
+<h3>Conditionals <span class="pg">[18]</span></h3>
+<table>
+  <tr><th>name (by form!)</th><th>if-clause</th><th>main clause</th></tr>
+  <tr><td>probable</td><td>present</td><td>will + inf</td></tr>
+  <tr><td>improbable</td><td>past (were)</td><td>would + inf</td></tr>
+  <tr><td>impossible</td><td>past perfect</td><td>would have + pp</td></tr>
+</table>
+<p>Modal functions in the if-clause: <b>should</b> = improbability (If he should call, …) · <b>were to</b> = supposition · <b>will / would</b> = politeness or willingness (If you <b>won’t</b> leave a man in peace = refuse to).</p>
+<p><b>Modal past</b> (hypothetical): wish · if only · as if · it’s (high) time · I’d rather + past; <b>were</b> for every person. A real past with a time marker is not modal past. <span class="pg">[15–16]</span></p>
+<p><b>Reported speech:</b> with a past reporting verb, backshift: present → past · past / present perfect → past perfect · will → would. These modals stay: must (supposition), ought to, used to, had better, could, would, should, might. <span class="pg">[19]</span></p>
+<span class="slip">had (were having) · called (will call) · looks (looked) · had not been (wasn’t) · stood (would be standing) · had been (was being) · spend (spent) · simply reused (had simply reused) · felt (was feeling) · regreted (regret)</span>
+
+<h2>3 · Modals <small>[20–25]</small></h2>
+<table>
+  <tr><th>meaning</th><th>modal</th><th>example / signal</th></tr>
+  <tr><td>deduction: sure yes</td><td>must · must have + pp</td><td><i>I’m convinced he must be running a distillery.</i></td></tr>
+  <tr><td>deduction: sure no</td><td>can’t / couldn’t have + pp</td><td><i>Surely you can’t have missed the point?</i></td></tr>
+  <tr><td>expectation</td><td>should · ought to</td><td>you should pass</td></tr>
+  <tr><td>possibility</td><td>may (factual) · can (theoretical) · could · might (less likely)</td><td><i>He feared others might try …</i></td></tr>
+  <tr><td>strong obligation</td><td>must (speaker) · have to (external)</td><td><i>It’s 2 a.m. You must come home earlier.</i></td></tr>
+  <tr><td>past obligation</td><td>had to (past of must)</td><td><i>Someone told us we only had to …</i></td></tr>
+  <tr><td>advice</td><td>should · ought to · <b>had better</b> (+ threat)</td><td><i>You had better mind your own business.</i></td></tr>
+  <tr><td>no obligation</td><td>needn’t · don’t need/have to</td><td><i>You needn’t think there was a third attempt.</i></td></tr>
+  <tr><td>prohibition</td><td>mustn’t (strong) · may not · cannot</td><td>mustn’t ≠ needn’t!</td></tr>
+  <tr><td>permission</td><td>may · can · could · might (very polite)</td><td></td></tr>
+  <tr><td>willingness</td><td>will · would · shall (formal)</td><td>will = request, intention, <b>promise</b></td></tr>
+  <tr><td>ability</td><td>can · could (general past) · <b>was able to</b> (= could and did)</td><td><i>He was able to hide every trace.</i></td></tr>
+  <tr><td>concession</td><td>may (have) … but</td><td><i>He may have been uneducated, but …</i></td></tr>
+  <tr><td>be to</td><td>order · official plan · <b>fate</b></td><td><i>It was only years later that I was to learn …</i> (sollte erst … erfahren)</td></tr>
+  <tr><td>be supposed to</td><td>rumour · expectation · intention</td><td><i>Was that supposed to be a compliment?</i></td></tr>
+  <tr><td>typical behaviour</td><td>will (present) · <b>would</b> (past)</td><td><i>He would! That was typical of him.</i></td></tr>
+  <tr><td>discontinued habit</td><td>used to</td><td><i>Uncle Joe used to vanish …</i></td></tr>
+  <tr><td>boldness</td><td>dare (+ bare inf as modal)</td><td><i>How dare you … · I dare say …</i></td></tr>
+</table>
+<p><b>Perfect infinitive:</b> could / might have done = (a) possible, but it did not happen (<i>Max could have married Sam</i>) or (b) an unsure guess about the past (<i>I think he might have overheard us</i>, July key) · may have …, but = concession · needn’t have done = done, but unnecessary · must / can’t have done = sure deduction about the past. <span class="pg">[21, 23–24]</span></p>
+<p><b>Question tags:</b> Sit down, won’t you? · Don’t tell anybody, will you? · Shut the window, will you? <span class="pg">[25]</span></p>
+<p><b>German “sollen”:</b> should / ought to · had better · be to · be supposed / said to.</p>
+<span class="slip">had to be running (must) · must give (had to) · might have been … but (may have) · shall better (had) · had to have missed (can’t) · might think (needn’t) · was able to learn (was to) · would try (might) · needn’t have (would)</span>
+
+<h2>4 · Relative clauses <small>[27–31]</small></h2>
+<p><b>Comma test:</b> can the clause be removed and turned into a new sentence? → non-defining → <b>commas</b> (names, unique things). No commas = defining = it restricts: <i>The travellers who knew</i> = only some of them.</p>
+<table>
+  <tr><th>case</th><th>defining (no comma)</th><th>non-defining (commas)</th></tr>
+  <tr><td>subject</td><td>who / that · which / that – <b>never C</b></td><td>, who · , which</td></tr>
+  <tr><td>object</td><td>who(m) / that / which / <b>C</b> → write <b>C</b></td><td>, who(m) · , which</td></tr>
+  <tr><td>preposition</td><td>at whom / which · or <b>C</b> … at</td><td>, with whom · , for which</td></tr>
+  <tr><td>genitive</td><td>whose</td><td>, whose · , the history of which</td></tr>
+  <tr><td>partitive</td><td>–</td><td>, many / some / two <b>of whom</b> · <b>of which</b></td></tr>
+</table>
+<ul>
+  <li><b>that</b> never after a comma. <b>C</b> only in defining clauses, never for the subject; also after time nouns (<i>the day C Hale-Bopp …</i>).</li>
+  <li><b>, which</b> can refer to a whole clause (connective): <i>Jill called me a pig, which I found insulting.</i></li>
+  <li><b>what</b> = that which (no antecedent): <i>for what they thought would be a trip</i>.</li>
+  <li><b>, where / , when</b> only in non-defining clauses after a name or an already identified place/time: <i>in Rancho Santa Fe, where they ran a business</i>. Defining = no comma: <i>at a time when this was a good way …</i> (mock) · <i>the day C Hale-Bopp …</i></li>
+  <li>whoever / whatever / whichever = no matter who / what; present tense for the future. Cleft: <i>It was he who …</i></li>
+</ul>
+<span class="slip">Applewhite who (, who) · compound which (C) · Rancho Santa Fe , (, where) · Heaven’s Gate C (, who) · for who (what) · many who (of whom)</span>
+
+<h2>5 · Word order <small>[32–37]</small></h2>
+<p><b>Mid position:</b> before the main verb, after am/is/was, after the <b>first auxiliary</b> (We will probably have arrived). Degree and manner adverbs go after all auxiliaries (will have been completely ruined). With a contracted negative, the adverb comes first (I probably won’t).</p>
+<p><b>End position:</b> manner – place – time (after verbs of motion: place – manner – time).</p>
+<p><b>Inversion</b> after negative or restrictive front adverbials: never · seldom · scarcely · barely · hardly · rarely · only · not only · no sooner · nowhere · under no circumstances · on no account · on no condition · no way · few · little · so · such · neither · nor. Simple verb → <b>do</b>: <i>Rarely did she visit · So severe did the symptoms become</i>. Compound verb or be → no do: <i>Never have I seen · So great was my surprise</i>.</p>
+<p><b>NO inversion:</b> no doubt · in no time · nevertheless · nonetheless · occasionally · without exception · not far from · not long after · even so · with no difficulty at all.</p>
+<p>here / there / up / down / off / back + <b>noun</b> → inversion (<i>Here comes the bride!</i>); + <b>pronoun</b> → none (<i>Off we go!</i>).</p>
+<p>Adverbs of time: soon · still · recently · lately ≠ frequency: sometimes · often · usually. <i>He spoke even to me</i> = to me of all people.</p>
+
+<h2>6 · Determiners <small>[38–40]</small></h2>
+<p><b>the:</b> unique things (the earth) · made definite by a clause or of-phrase · superlatives, ordinals, only · the + adjective = a group of people (the dead) · rivers, seas, mountain chains, island groups, deserts, plural countries (the USA) · instruments and dances.</p>
+<p><b>No the:</b> abstract and uncountable nouns in general (life, sugar) · plural classes (Dogs with long legs …) · names, continents, countries, towns, streets, lakes · body parts and clothes → possessive (his hand; but <i>hit me in the stomach</i>) · school, church, hospital, prison as institutions · man (= mankind) · illnesses (appendicitis; but the flu, a cold).</p>
+<p><b>a / an:</b> countable singular · a class (A cow has horns) · professions (She is a teacher) – but <b>no article</b> for unique positions and titles (appointed <i>Head of Department</i>) · a dozen, a hundred · 60 miles an hour · What a day! · <b>a few / a little</b> = some.</p>
+<p><b>few / little</b> without an article = hardly any: <i>Few people know this</i>; <i>hardly any rain</i> = little rain. But: <i>A few of my friends work abroad</i>.</p>
+<p><b>No a / an:</b> plurals · abstract nouns · uncountable nouns (advice, information, news) · materials · meals (have breakfast; but a good breakfast) · <b>own → my / her own</b>.</p>
+
+<h2>7 · MC traps <small>July + mock test</small></h2>
+<ul>
+  <li>Underline <b>NOT</b> / <b>How many … do not</b> – then count the wrong ones.</li>
+  <li>regret <b>to</b> + past time = wrong · regret <b>-ing / having done</b> = right → “how many are not correct?” = 2.</li>
+  <li><i>If I became President, I would …</i> = <b>improbable</b> (by form – not impossible).</li>
+  <li>Modal past: <i>as if he were · it’s high time you started · I wish I had never come</i>. Not: <i>you came home early yesterday</i>.</li>
+  <li>Contact clause = <b>0</b> relative pronouns; the pronoun can be left out <b>only in defining</b> clauses.</li>
+  <li>Present progressive for the future = <b>intention with present arrangement</b>. will = promise. must = strong obligation (speaker’s authority).</li>
+  <li><i>cannot have escaped</i> = impossibility · <i>could have danced all night</i> = ability, not performed.</li>
+  <li><i>When you take a look …, you will understand</i> – no will in the time clause.</li>
+  <li><i>are being silly</i> = temporary behaviour · <i>I hear you have …</i> = historic present.</li>
+  <li>Inversion with compound verbs: <b>no</b> do-paraphrase.</li>
+  <li>Head of Department → no article · own → possessive determiner · a few of my friends = some · hardly any rain = little rain.</li>
+  <li><i>…, which I found insulting</i> → which refers to the whole preceding clause.</li>
+</ul>
+
+</div>
+
+<p class="foot">Made for the resit on 9 Oct 2026 from the July attempt review, the official Theory Reader SoSe 2026 and the Moodle mock test. Keys for the July non-finite, tense and relative tasks are not printed in Moodle and were reconstructed from the reader; was being and regret are the less certain ones.</p>
+</div>
+</body>
+</html>
