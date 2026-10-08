@@ -8,6 +8,19 @@ English-language, iPad-friendly exam trainer for **RUB Grammar BM, Sommersemeste
 
 The source is stored in the private repository <https://github.com/SirMrBA/grammar-sprint-sidelya>. The published GitHub Pages website itself is public.
 
+## Resit Repair
+
+**Resit:** Friday, 9 October 2026, 09:00–11:00 · <https://sirmrba.github.io/grammar-sprint-sidelya/resit/>
+
+Single-file trainer in `resit/index.html`, built from the July attempt review:
+
+- all 36 July mistakes to correct in the original exam texts, with hints, the rule and reader page
+- repair-kit rule cards per error pattern
+- 68 new transfer drills (typed gaps and multiple choice)
+- exam-day checklist and time budget
+
+The review prints no official keys for non-finites, tense and relatives; those keys were reconstructed from the reader and cross-checked. Two uncertain gaps accept both readings.
+
 ## Exam
 
 - Friday, 24 July 2026

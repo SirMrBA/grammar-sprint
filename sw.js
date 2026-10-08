@@ -1,7 +1,8 @@
-const CACHE_NAME = "grammar-sprint-v2";
+const CACHE_NAME = "grammar-sprint-v3";
 const ASSETS = [
   "./",
   "./index.html",
+  "./resit/",
   "./styles.css",
   "./data.js",
   "./app.js",
@@ -27,6 +28,17 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET" || new URL(event.request.url).origin !== self.location.origin) return;
+  // Pages and the resit trainer: network first so updates arrive immediately, cache as offline fallback.
+  if (event.request.mode === "navigate" || new URL(event.request.url).pathname.includes("/resit/")) {
+    event.respondWith(
+      fetch(event.request).then((response) => {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        return response;
+      }).catch(() => caches.match(event.request))
+    );
+    return;
+  }
   event.respondWith(
     caches.match(event.request).then((cached) => cached || fetch(event.request).then((response) => {
       const copy = response.clone();

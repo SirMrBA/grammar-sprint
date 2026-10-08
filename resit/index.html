@@ -1,0 +1,1221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#153b46">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Resit Repair">
+<meta name="description" content="Grammar BM resit trainer: repair every mistake from the July attempt, learn the rule behind it, then prove it on new sentences.">
+<title>Grammar Resit Repair</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23153b46'/%3E%3Cpath d='M15 14h14c4 0 7 2 9 5v31c-2-3-5-5-9-5H15V14Z' fill='%23fffdf8'/%3E%3Cpath d='M49 14H35c-4 0-7 2-9 5v31c2-3 5-5 9-5h14V14Z' fill='%23e8f1ef'/%3E%3Ccircle cx='48' cy='48' r='10' fill='%23d28a47'/%3E%3Cpath d='m44 48 2.5 2.5L52 45' fill='none' stroke='%23fff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root {
+  color-scheme: light;
+  --ink: #16272c;
+  --muted: #5d6e73;
+  --paper: #f2f3ed;
+  --panel: #fffdf8;
+  --panel-2: #f7f6f0;
+  --line: #d3d9d2;
+  --brand: #153b46;
+  --brand-2: #287080;
+  --gold: #c27c3a;
+  --gold-soft: #f3dfbf;
+  --red: #a23a36;
+  --red-soft: #f6e0dd;
+  --ok: #276245;
+  --ok-soft: #dcecdf;
+  --warn: #8a5a12;
+  --warn-soft: #f7ead2;
+  --chip-ink: #fffdf7;
+  --shadow: 0 14px 40px rgba(35, 43, 37, .09);
+  --radius: 20px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ink: #e8eeec;
+    --muted: #9fb0b2;
+    --paper: #0f1a1d;
+    --panel: #16252a;
+    --panel-2: #1b2d33;
+    --line: #2c4148;
+    --brand: #8fd0dc;
+    --brand-2: #7cc3cf;
+    --gold: #e3a568;
+    --gold-soft: #3d2f1d;
+    --red: #f19a92;
+    --red-soft: #3a2220;
+    --ok: #8fd3a8;
+    --ok-soft: #1c3527;
+    --warn: #f0c27a;
+    --warn-soft: #3a2f19;
+    --chip-ink: #0f1a1d;
+    --shadow: 0 14px 40px rgba(0, 0, 0, .35);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #e8eeec;
+  --muted: #9fb0b2;
+  --paper: #0f1a1d;
+  --panel: #16252a;
+  --panel-2: #1b2d33;
+  --line: #2c4148;
+  --brand: #8fd0dc;
+  --brand-2: #7cc3cf;
+  --gold: #e3a568;
+  --gold-soft: #3d2f1d;
+  --red: #f19a92;
+  --red-soft: #3a2220;
+  --ok: #8fd3a8;
+  --ok-soft: #1c3527;
+  --warn: #f0c27a;
+  --warn-soft: #3a2f19;
+  --chip-ink: #0f1a1d;
+  --shadow: 0 14px 40px rgba(0, 0, 0, .35);
+}
+
+* { box-sizing: border-box; }
+html { background: var(--paper); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.55;
+}
+button, input, select { font: inherit; color: inherit; }
+button { -webkit-tap-highlight-color: transparent; cursor: pointer; }
+.shell { width: min(1080px, calc(100% - 32px)); margin: 0 auto; padding-bottom: 64px; }
+
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { letter-spacing: -.02em; line-height: 1.15; }
+h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 500; }
+h2 { margin-bottom: 10px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.45rem, 3.2vw, 2.2rem); font-weight: 500; }
+h3 { margin-bottom: 6px; font-size: 1.05rem; }
+.eyebrow { margin: 0 0 6px; color: var(--brand-2); font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.muted { color: var(--muted); }
+.small { font-size: .86rem; }
+
+/* top */
+.top { display: flex; justify-content: space-between; align-items: flex-end; gap: 18px; padding: 28px 0 18px; flex-wrap: wrap; }
+.exam-chip { padding: 11px 16px; color: var(--chip-ink); background: var(--brand); border-radius: 16px; box-shadow: var(--shadow); min-width: 200px; }
+.exam-chip span { display: block; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; opacity: .8; }
+.exam-chip strong { display: block; }
+.exam-chip small { display: block; margin-top: 3px; font-size: .74rem; opacity: .85; }
+.theme-btn { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 6px 12px; font-size: .8rem; color: var(--muted); }
+
+/* tabs */
+.tabs { position: sticky; top: 0; z-index: 5; display: flex; gap: 6px; overflow-x: auto; padding: 7px; margin-bottom: 22px; background: color-mix(in srgb, var(--panel) 88%, transparent); border: 1px solid var(--line); border-radius: 16px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab { flex: 1 0 auto; padding: 9px 14px; border: 0; border-radius: 11px; background: transparent; color: var(--muted); font-weight: 600; white-space: nowrap; }
+.tab.is-active { background: var(--brand); color: var(--chip-ink); }
+.view { display: none; }
+.view.is-active { display: block; }
+
+/* blocks */
+.card { scroll-margin-top: 76px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
+.stack > * + * { margin-top: 18px; }
+.grid { display: grid; gap: 14px; }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 820px) { .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .grid-2 { grid-template-columns: 1fr; } }
+.metric { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+.metric span { display: block; color: var(--muted); font-size: .8rem; }
+.metric strong { display: block; font-size: 1.5rem; font-variant-numeric: tabular-nums; }
+.hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; align-items: center; }
+@media (max-width: 820px) { .hero { grid-template-columns: 1fr; } }
+.big-score { font-family: Georgia, serif; font-size: clamp(3rem, 9vw, 5rem); line-height: 1; color: var(--brand); }
+.big-score small { font-size: .35em; color: var(--muted); }
+
+.button { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--panel); font-weight: 600; text-decoration: none; color: var(--ink); }
+.button.primary { background: var(--brand); color: var(--chip-ink); border-color: var(--brand); }
+.button.ghost { background: transparent; }
+.button.small { padding: 6px 11px; font-size: .84rem; border-radius: 10px; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* score table */
+.score-row { display: grid; grid-template-columns: minmax(130px, 1.2fr) 2fr 120px; gap: 12px; align-items: center; padding: 9px 0; border-top: 1px solid var(--line); }
+.score-row:first-child { border-top: 0; }
+.bar { position: relative; height: 12px; border-radius: 99px; background: var(--red-soft); overflow: hidden; }
+.bar i { position: absolute; inset: 0 auto 0 0; background: var(--brand-2); border-radius: 99px; }
+.score-row b { font-weight: 600; }
+.score-row .num { text-align: right; font-variant-numeric: tabular-nums; }
+.lost { color: var(--red); font-weight: 700; font-size: .82rem; }
+
+/* plan list */
+.plan { list-style: none; padding: 0; margin: 0; }
+.plan li { display: flex; gap: 12px; align-items: flex-start; padding: 11px 0; border-top: 1px solid var(--line); }
+.plan li:first-child { border-top: 0; }
+.plan input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--brand-2); flex: none; }
+.plan .time { flex: none; width: 64px; color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
+.plan label { flex: 1; }
+.plan .done label { color: var(--muted); text-decoration: line-through; }
+
+.note { border-left: 4px solid var(--gold); background: var(--gold-soft); padding: 12px 14px; border-radius: 0 12px 12px 0; }
+.note p:last-child { margin-bottom: 0; }
+
+/* segmented */
+.seg { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.seg button { border: 1px solid var(--line); background: var(--panel); border-radius: 12px; padding: 8px 12px; text-align: left; }
+.seg button small { display: block; color: var(--muted); font-size: .74rem; }
+.seg button.is-active { border-color: var(--brand-2); box-shadow: inset 0 0 0 1px var(--brand-2); }
+.seg button .tick { color: var(--ok); font-weight: 700; }
+.toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 11px; overflow: hidden; }
+.toggle button { border: 0; background: var(--panel); padding: 7px 12px; font-size: .85rem; color: var(--muted); }
+.toggle button.is-active { background: var(--brand); color: var(--chip-ink); }
+
+/* exam text */
+.instruction { color: var(--red); font-weight: 700; }
+.task-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: flex-start; }
+.exam-text { font-size: 1.04rem; line-height: 2.35; margin: 0 0 6px; }
+.cue { font-weight: 700; }
+.gap-input { width: 13ch; max-width: 100%; padding: 3px 8px; border: 1.5px solid var(--line); border-radius: 9px; background: var(--panel-2); line-height: 1.5; font-size: 1rem; }
+.gap-input.short { width: 9ch; }
+.gap-input:focus { outline: none; border-color: var(--brand-2); box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-2) 25%, transparent); }
+select.gap-input { width: auto; min-width: 11ch; padding-right: 4px; }
+.gap-input.is-right { border-color: var(--ok); background: var(--ok-soft); }
+.gap-input.is-wrong { border-color: var(--red); background: var(--red-soft); }
+.gap-input.is-revealed { border-color: var(--warn); background: var(--warn-soft); }
+.was { display: inline-block; margin-right: 4px; padding: 0 6px; border-radius: 6px; background: var(--red-soft); color: var(--red); font-size: .8rem; line-height: 1.6; text-decoration: line-through; vertical-align: 2px; }
+.gap-fixed { padding: 1px 7px; border-radius: 7px; background: var(--ok-soft); color: var(--ok); font-weight: 600; white-space: nowrap; }
+.gapwrap { white-space: nowrap; }
+.gapno { font-size: .66rem; color: var(--muted); vertical-align: super; margin-right: 1px; }
+.fb-stack { margin: 4px 0 18px; display: grid; gap: 10px; }
+.fb { border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; background: var(--panel-2); font-size: .94rem; }
+.fb.right { border-color: color-mix(in srgb, var(--ok) 50%, var(--line)); background: var(--ok-soft); }
+.fb.wrong { border-color: color-mix(in srgb, var(--red) 45%, var(--line)); background: var(--red-soft); }
+.fb.revealed { border-color: color-mix(in srgb, var(--warn) 45%, var(--line)); background: var(--warn-soft); }
+.fb p { margin: 4px 0 0; }
+.fb .fb-title { font-weight: 700; }
+.fb .ans { font-weight: 700; }
+.fb .src { color: var(--muted); font-size: .8rem; }
+.flag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 99px; background: var(--gold-soft); color: var(--warn); font-size: .76rem; font-weight: 600; }
+.bank { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; }
+.bank span { border: 1px solid var(--line); border-radius: 8px; padding: 3px 10px; background: var(--panel-2); font-size: .9rem; }
+.bank span.used { opacity: .45; text-decoration: line-through; }
+.task-foot { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin-top: 10px; padding-top: 14px; border-top: 1px solid var(--line); }
+
+/* MC */
+.mc { padding: 18px; }
+.mc + .mc { margin-top: 14px; }
+.mc-q { font-weight: 600; margin-bottom: 10px; white-space: pre-line; }
+.opts { display: grid; gap: 8px; }
+.opt { text-align: left; border: 1.5px solid var(--line); background: var(--panel-2); border-radius: 12px; padding: 9px 12px; line-height: 1.4; }
+.opt:hover { border-color: var(--brand-2); }
+.opt.is-right { border-color: var(--ok); background: var(--ok-soft); }
+.opt.is-wrong { border-color: var(--red); background: var(--red-soft); }
+.opt .tag { margin-left: 6px; }
+.tag { display: inline-block; padding: 1px 8px; border-radius: 99px; font-size: .72rem; font-weight: 700; background: var(--panel); border: 1px solid var(--line); color: var(--muted); vertical-align: 1px; }
+.tag.red { background: var(--red-soft); color: var(--red); border-color: transparent; }
+.tag.green { background: var(--ok-soft); color: var(--ok); border-color: transparent; }
+.tag.gold { background: var(--gold-soft); color: var(--warn); border-color: transparent; }
+
+/* rules */
+.rule-group + .rule-group { margin-top: 26px; }
+.rule { position: relative; }
+.rule h3 { padding-right: 90px; }
+.rule ul { margin: 6px 0 0; padding-left: 20px; }
+.rule li { margin: 3px 0; }
+.rule .yours { margin-top: 10px; padding: 9px 12px; border-radius: 12px; background: var(--red-soft); font-size: .9rem; }
+.rule .yours b { color: var(--red); }
+.rule .know { position: absolute; top: 18px; right: 18px; }
+.rule.is-known { opacity: .7; }
+.ex { font-style: italic; }
+
+/* drills */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 16px; }
+.chip { border: 1px solid var(--line); background: var(--panel); border-radius: 99px; padding: 6px 12px; font-size: .85rem; font-weight: 600; color: var(--muted); }
+.chip.is-active { background: var(--brand); color: var(--chip-ink); border-color: var(--brand); }
+.drill { padding: 16px 18px; }
+.drill + .drill { margin-top: 12px; }
+.drill-q { font-size: 1.02rem; margin-bottom: 10px; white-space: pre-line; }
+.drill-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.drill-row .gap-input { width: min(260px, 100%); }
+.drill .fb { margin-top: 10px; }
+.drill.is-right { border-color: color-mix(in srgb, var(--ok) 40%, var(--line)); }
+
+.kbd { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; background: var(--panel-2); border: 1px solid var(--line); border-radius: 6px; padding: 0 6px; }
+table.simple { width: 100%; border-collapse: collapse; font-size: .94rem; }
+table.simple td, table.simple th { text-align: left; padding: 8px 6px; border-top: 1px solid var(--line); vertical-align: top; }
+table.simple th { color: var(--muted); font-weight: 600; font-size: .8rem; border-top: 0; }
+.footer { margin-top: 40px; color: var(--muted); font-size: .8rem; }
+@media (max-width: 560px) {
+  .card { padding: 16px; }
+  .score-row { grid-template-columns: 1fr 120px; }
+  .score-row .bar { grid-column: 1 / -1; grid-row: 2; }
+  .exam-text { line-height: 2.2; }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="top">
+    <div>
+      <p class="eyebrow">RUB · Grammar BM · Resit · SoSe 2026</p>
+      <h1>Resit Repair</h1>
+    </div>
+    <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap">
+      <button class="theme-btn" id="theme-btn" type="button" aria-label="Toggle dark mode">◐ Theme</button>
+      <div class="exam-chip" aria-label="Resit date and countdown">
+        <span>Central exam · resit</span>
+        <strong>Fri · 9 Oct · 09:00</strong>
+        <small id="countdown">…</small>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Sections">
+    <button class="tab is-active" data-view="plan">Plan</button>
+    <button class="tab" data-view="fix">Fix my exam</button>
+    <button class="tab" data-view="rules">Repair kit</button>
+    <button class="tab" data-view="drills">New drills</button>
+    <button class="tab" data-view="day">Exam day</button>
+  </nav>
+
+  <main>
+    <section id="view-plan" class="view is-active stack"></section>
+    <section id="view-fix" class="view"></section>
+    <section id="view-rules" class="view"></section>
+    <section id="view-drills" class="view"></section>
+    <section id="view-day" class="view stack"></section>
+  </main>
+
+  <p class="footer">Built from the July attempt review (ZK Grammar BM SoSe 26), the official Grammar BM Theory Reader SoSe 2026 and the Moodle mock test. Progress is saved only in this browser.</p>
+</div>
+
+<script>
+/* =========================================================================
+   DATA
+   ========================================================================= */
+const EXAM_ISO = "2026-10-09T09:00:00+02:00";
+
+const SECTIONS = [
+  { id: "q1", short: "Non-finites", title: "Non-finite verb forms", got: 11, max: 15 },
+  { id: "q2", short: "Tense & aspect", title: "Tense & aspect", got: 10, max: 20 },
+  { id: "q3", short: "Modals", title: "Modal items", got: 6, max: 15 },
+  { id: "q4", short: "Relatives", title: "Relative clauses", got: 4, max: 10 },
+  { id: "mc", short: "Theory MC", title: "Theory & analysis (MC)", got: 8, max: 15 }
+];
+
+/* Gap fields:
+   cue: verb in brackets · her: July answer · ok: marked correct in July
+   key: model answer(s) · also: accepted but weaker / alternative readings
+   hint · why (why July answer failed) · rule · page · flag (key reconstructed, uncertain) */
+const TASKS = {
+  q1: {
+    id: "q1", kind: "type", width: "",
+    instruction: "Put the verbs in brackets into the correct non-finite verb form. Add a preposition when necessary.",
+    paras: [
+      "On the subject of holidays our family was used to {{N1}} what our Dad proposed. Year after year he ‘suggested’ {{N2}} to the mountains to make us {{N3}} nature, as he phrased it. On each occasion Mum intended to contradict him, but was afraid. She would have liked to spend three weeks on the coast for a change.",
+      "Finally, this year, in a fit of determination she insisted {{N4}} to the seaside. Dad was speechless; he had never expected anyone {{N5}} against anything he had to say. Nevertheless, he accepted the new proposal in silence.",
+      "Of course, this would mean {{N6}} our family’s entire vacation plans. Up to that point we children had given up interfering in these discussions. It had not been worthwhile adding anything to the matter; we knew it would be a waste of time to join in this domestic discussion, if one could call it that. In fact, I cannot ever remember {{N7}} by Mum or Dad. We would often ask ourselves if our parents would ever let us {{N8}} our views with them. After family discussions, debates, or whatever you want to call them, we were always about to leave home.",
+      "This year, as usual, Dad arranged the procedure for the vacations; he thought it didn’t need {{N9}}. However, on this occasion my mother was adamant. Despite years of playing second fiddle to her husband she now absolutely refused {{N10}} to ‘his’ mountains. Did he not want to treat his own wife as his equal and his teenage children as grown-ups? For a moment he considered {{N11}} the room but then started {{N12}} to our suggestions. Unfortunately, this harmony did not last long. Dad was no longer interested {{N13}} to his family. He just let them get on with their business. He did, glumly, promise {{N14}} in the future, but this was nothing more than lip service to justice.",
+      "What in fact he did do was give up {{N15}} to be the dominant figure in a patriarchal set-up."
+    ],
+    gaps: {
+      N1: { cue: "do", her: "doing", ok: true, key: ["doing"], rule: "be used to + -ing: here ‘to’ is a preposition (= be accustomed to).", page: "Reader p. 12" },
+      N2: { cue: "go", her: "to go", ok: false, key: ["going"],
+        hint: "Is suggest on the gerund list or the to-infinitive list?",
+        why: "‘suggest + to-infinitive’ does not exist in English (*he suggested to go*).",
+        rule: "suggest is always followed by the gerund: he suggested going (or: suggested that we go).", page: "Reader p. 6 (gerund list)" },
+      N3: { cue: "enjoy", her: "enjoy", ok: true, key: ["enjoy"], rule: "make sb do sth → bare infinitive.", page: "Reader p. 8" },
+      N4: { cue: "travel", her: "traveling", ok: false, key: ["on travelling", "on traveling"],
+        hint: "Read the instruction again: “Add a preposition when necessary.” She insisted ___ something.",
+        why: "The -ing form was right – but the preposition was missing. Without ‘on’ the gap is wrong.",
+        rule: "insist ON + gerund. After a preposition you always use the -ing form.", page: "Reader p. 11 (prepositions + gerund)" },
+      N5: { cue: "speak up", her: "to speak up", ok: true, key: ["to speak up"], rule: "expect sb to do sth.", page: "Reader p. 7" },
+      N6: { cue: "change", her: "changing", ok: true, key: ["changing"], rule: "mean + -ing = involve (mean + to = intend).", page: "Reader p. 10" },
+      N7: { cue: "be listened to", her: "being listened to", ok: true, key: ["being listened to"], rule: "remember + -ing = memory of the past (passive gerund).", page: "Reader p. 10" },
+      N8: { cue: "share", her: "share", ok: true, key: ["share"], rule: "let sb do sth → bare infinitive.", page: "Reader p. 8" },
+      N9: { cue: "discuss", her: "to be discussed", ok: true, key: ["to be discussed", "discussing"], rule: "need + passive infinitive – or need + active gerund with passive meaning (it needs discussing).", page: "Reader p. 12" },
+      N10: { cue: "go", her: "to go", ok: true, key: ["to go"], rule: "refuse + to-infinitive.", page: "Reader p. 7" },
+      N11: { cue: "leave", her: "to leave", ok: false, key: ["leaving"],
+        hint: "consider changes its meaning. Here he is thinking about leaving – which form goes with ‘think about’?",
+        why: "‘consider + to-infinitive’ only appears as ‘consider sb to be …’ (= regard as). For ‘think about doing’ you need the gerund.",
+        rule: "consider + gerund = think about doing (I seriously consider migrating …); consider sb to be = regard sb as.", page: "Reader p. 10 (change in meaning)" },
+      N12: { cue: "listen", her: "listening", ok: true, key: ["listening", "to listen"], rule: "start + gerund or to-infinitive, no change in meaning.", page: "Reader p. 9" },
+      N13: { cue: "listen", her: "listening", ok: false, key: ["in listening"],
+        hint: "Same trap as ‘insisted’: interested ___ something?",
+        why: "Again the -ing form was right, but the preposition ‘in’ was missing.",
+        rule: "be interested IN + gerund. Adjective/verb + preposition → -ing.", page: "Reader p. 11" },
+      N14: { cue: "change", her: "to change", ok: true, key: ["to change"], rule: "promise + to-infinitive.", page: "Reader p. 7" },
+      N15: { cue: "attempt", her: "attempting", ok: true, key: ["attempting"], rule: "give up + gerund.", page: "Reader p. 6" }
+    }
+  },
+
+  q2: {
+    id: "q2", kind: "type", width: "",
+    instruction: "Read the text carefully, taking the whole context into account, and fill in the correct verb form (correct tense and correct aspect). Adjust the word order where necessary.",
+    paras: [
+      "Students who {{T1}} it hard to imagine life without the study aids provided by the Internet may consider these reminiscences of life in ancient times – the early 1970s – amusing. The technology was low, but the motivations were essentially the same. I {{T2}} for very long when I {{T3}} the importance of a series of volumes titled <i>Masterplots</i> (rather like <i>Kindlers Literaturlexikon</i>).",
+      "The librarian {{T4}} this collection of plot summaries in the “reserve room” of the college library and it was not permitted, for love or money, to remove it from that room. Photocopying machines {{T5}} still a rarity in those days, and so on the day before any test in a literature course, there {{T6}} always a terrible run on the reserve room to consult the books.",
+      "Once, before the final test in a course on the Victorian novel, we {{T7}} a very bad time with our preparations. Now, there was one especially trifling member of that course whom I {{T8}} “Chuck” for the purposes of the following story, just to avoid the possibilities of a lawsuit for defamation. It wasn’t his real name, but he {{T9}} rather like a woodchuck. It was a point of personal honour with Chuck never to read an assignment for a course or to start preparations until 3:00 a.m. on the day of a test. The problem in this case was that the library was only open from 9:00 a.m. to 9:00 p.m., so it was strange that on the day before the test, he {{T10}} on the steps with the rest of us at 8:59 a.m, although we had expected that he {{T11}} there in any case.",
+      "In the reserve room, we {{T12}} an unpleasant discovery: the pages for <i>Vanity Fair, Martin Chuzzlewit, Middlemarch</i>, etc. {{T13}} very neatly, with a razor blade or a sharp pocket knife. There was a moment of shocked silence, and then, in chorus, a cry of “CHUCK!”",
+      "The librarian, naturally, was extremely furious about the vandalism. At the same time, he {{T14}} exceptionally gleeful over our predicament, although sadism was not in his nature.",
+      "“If you guys ever {{T15}} half as much time working as trying to get out of work, you {{T16}} in trouble about your studies”, was his heartless comment.",
+      "Another institution of those times was the collection of old term papers on file with the fraternities and sororities (approximations of the German <i>Verbindungen</i>). There was a curious set of ethics among students about what was, plainly and simply, plagiarism: it was considered all right to “recycle” a term paper (i.e., retype it, change the phrasing here and there, add some thoughts of one’s own), but it would have been regarded as cheating if someone {{T17}} a paper by handing it in unchanged. One time, somebody (let’s not mention names) {{T18}} around in a filing cabinet drawer, in the hope of finding a recyclable paper for a history course, and there at the back was a long list of names of students at the local women’s colleges, with a rundown of physical attributes and erotic preferences. I {{T19}} that the finder was not outraged by this heinous piece of sexism, but I would not be telling the truth now if I {{T20}} so."
+    ],
+    gaps: {
+      T1: { cue: "to generally find", her: "generally find", ok: true, key: ["generally find"], rule: "Simple present for a general habit; adverb of indefinite frequency in mid position.", page: "Reader pp. 14, 35" },
+      T2: { cue: "not to study", her: "had not studied", ok: true, key: ["had not studied", "hadn't studied", "had not been studying", "hadn't been studying"], rule: "Past perfect: anteriority to the past point ‘when I realized’.", page: "Reader p. 16" },
+      T3: { cue: "to realize", her: "realized", ok: true, key: ["realized", "realised"], rule: "Simple past: the event that marks the past point of orientation.", page: "Reader p. 15" },
+      T4: { cue: "to permanently keep", her: "permanently kept", ok: true, key: ["permanently kept"], rule: "Simple past; mid-position adverb before the simple verb.", page: "Reader pp. 15, 34" },
+      T5: { cue: "to be", her: "were", ok: true, key: ["were"], rule: "Simple past: a past state (‘in those days’).", page: "Reader p. 15" },
+      T6: { cue: "to be", her: "was", ok: true, key: ["was"], rule: "Simple past: habitual past (‘always’ before any test).", page: "Reader p. 15" },
+      T7: { cue: "to have", her: "had", ok: false, key: ["were having"],
+        hint: "Is this one completed event – or a situation that was going on at that time, as the background for the Chuck story?",
+        why: "The simple past presents ‘a bad time with our preparations’ as one finished fact. The story needs the ongoing situation as a frame.",
+        rule: "Past progressive = temporal frame / background: an activity in progress around a past time, against which the other events happen.", page: "Reader p. 16 (past progressive a, c)" },
+      T8: { cue: "to call", her: "called", ok: false, key: ["will call", "shall call", "'ll call"], also: ["am going to call"],
+        hint: "When does the naming happen – back in the 1970s, or now, as the narrator writes “the following story”?",
+        why: "‘called’ would mean you called him Chuck back then. But the name is chosen now, just for this story (it isn’t his real name).",
+        rule: "The narrator’s present decision → will-future (decision under the speaker’s control at the moment of speaking). Watch out for narrator comments inside a past-tense story.", page: "Reader p. 17" },
+      T9: { cue: "to look", her: "looks", ok: false, key: ["looked"],
+        hint: "Look at the first half of the sentence: “It wasn’t his real name, but he …”",
+        why: "The present tense would turn the description into a general truth about today. The description belongs to the past story.",
+        rule: "Narrative past: descriptions inside the story stay in the simple past (state verb → simple aspect).", page: "Reader p. 15" },
+      T10: { cue: "not to be", her: "had not been", ok: false, key: ["was not", "wasn't"],
+        hint: "Is his absence EARLIER than ‘it was strange’ – or at the same moment (8:59 a.m.)?",
+        why: "The past perfect needs anteriority. Here his absence and ‘it was strange’ happen at the same time, at a definite time (8:59 a.m. on the day before the test).",
+        rule: "Simple past = default for past facts at a definite time. Use the past perfect only for something EARLIER than another past point.", page: "Reader pp. 15–16" },
+      T11: { cue: "to stand", her: "stood", ok: false, key: ["would be standing", "'d be standing"], also: ["would stand"],
+        hint: "Put it into direct speech: We expected: “He ___ there at 8:59.”",
+        why: "‘stood’ reports a real past fact. But this is an expectation: from the past viewpoint ‘we had expected’, his standing there lay in the future.",
+        rule: "Future in the past: will → would after a past reporting verb. Progressive, because it would be in progress at a certain time (future progressive → would be standing).", page: "Reader pp. 17, 19" },
+      T12: { cue: "to make", her: "made", ok: true, key: ["made"], rule: "Narrative past.", page: "Reader p. 15" },
+      T13: { cue: "to be removed", her: "had been removed", ok: true, key: ["had been removed"], rule: "Past perfect passive: the pages were removed before the discovery.", page: "Reader p. 16" },
+      T14: { cue: "to be", her: "had been", ok: false, key: ["was being", "was"], flag: true,
+        hint: "Two clues: ‘At the same time’ – and ‘although sadism was not in his nature’. Is the glee his nature or his behaviour right then?",
+        why: "‘had been’ makes the glee EARLIER than his fury – but ‘at the same time’ says the two happen simultaneously.",
+        rule: "Simultaneous past state → no past perfect. ‘was being gleeful’ = temporary behaviour (like ‘You are being silly’), contrasting with ‘not in his nature’. Plain ‘was’ is the safe minimum.", page: "Reader pp. 14, 16; mock test Q12" },
+      T15: { cue: "to spend", her: "spend", ok: false, key: ["spent"],
+        hint: "Read the main clause first: “you would not constantly be …”",
+        why: "‘spend’ (present) belongs to the probable condition with will. The main clause has ‘would’.",
+        rule: "Improbable condition: if-clause past + main clause conditional I (would + infinitive).", page: "Reader p. 18" },
+      T16: { cue: "not to constantly be", her: "would not constantly be", ok: true, key: ["would not constantly be", "wouldn't constantly be"], rule: "Conditional I; adverb after the first auxiliary.", page: "Reader pp. 18, 34" },
+      T17: { cue: "to simply reuse", her: "simply reused", ok: false, key: ["had simply reused"],
+        hint: "Main clause: “it would HAVE BEEN regarded as cheating”. Which pattern is that?",
+        why: "‘simply reused’ (past) is the pattern of the improbable condition. ‘would have been’ demands the past perfect.",
+        rule: "Impossible condition: if-clause past perfect + main clause conditional II. The adverb goes after the first auxiliary: had simply reused.", page: "Reader pp. 18, 34" },
+      T18: { cue: "to feel", her: "felt", ok: false, key: ["was feeling"],
+        hint: "He was searching the drawer ‘in the hope of finding’ something – and then the discovery cut in.",
+        why: "‘felt’ makes the search a short completed act. It is the background activity that was going on when the list was found.",
+        rule: "Time inclusion: background action in the past progressive, the event that cuts in in the simple past.", page: "Reader p. 16 (past progressive c)" },
+      T19: { cue: "to regret", her: "regreted", ok: false, key: ["regret"], also: ["regretted"], flag: true,
+        hint: "The second half says ‘I would not be telling the truth NOW’. Whose time is this – the 1970s or the narrator’s present?",
+        why: "Two problems: the spelling (regret → regreTTed, double t!) and the time. The narrator comments from today’s perspective, like ‘whom I will call Chuck’.",
+        rule: "Narrator’s present comment, state verb → simple present: I regret that … In any case: regretted, stopped, preferred – double the final consonant when the stressed last syllable ends in one vowel letter + one consonant (but: visited, offered).", page: "Reader p. 14 (state verbs)" },
+      T20: { cue: "to say", her: "said", ok: true, key: ["said"], rule: "Improbable condition: if + past, main clause would (be telling).", page: "Reader p. 18" }
+    }
+  },
+
+  q3: {
+    id: "q3", kind: "select",
+    instruction: "Insert the correct modal verb form (drag-and-drop). Make sure you read the whole context.",
+    bank: ["might have", "might", "shall", "was to", "must", "won't", "had", "had to", "used to", "was able to", "would", "must have", "may have", "should", "needn't", "can't", "would be able to"],
+    paras: [
+      "Years ago, when illegal whiskey was still a way of life in the Kentucky mountains (the natives called the stuff “moonshine”), my Uncle Joe {{M1}} vanish into the woods for days at a time, which changed later on. “I’m totally convinced that Uncle Joe {{M2}} be running a secret distillery, hidden away in some mysterious cave,” I kept telling my mom. She enthusiastically shared my opinion.",
+      "For a long time, however, Uncle Joe was successful in keeping up appearances, i.e he {{M3}} hide any trace of his path through the woods, but finally, three of us children believed we had a solution to the mystery. Someone told us that we only {{M4}} give a bloodhound a sniff of some item of Uncle Joe’s clothing, and we {{M5}} follow him to the ends of the world. So we “borrowed” both a dog and one of Uncle Joe’s muddy old boots and brought the former’s nose into contact with the latter.",
+      "But somehow, Uncle Joe found out what we were up to. I’m not sure, but I think he {{M6}} overheard us talking, or maybe somebody told on us. Who knows? Uncle Joe {{M7}} been uneducated by today’s standards, but he was nobody’s fool. At any rate, the first attempt with the dog led us to the river, where we found a note on a stick reading: “You children really {{M8}} better have the courtesy to mind your own business.” Of course it was impossible for the dog to follow the scent across the water, so we gave up.",
+      "The second attempt was no better; it took us to the bottom of a sheer cliff, where another note read: “Surely you {{M9}} have missed the point? If you {{M10}} leave a man in peace, you’ll bear the consequences.” You {{M11}} think there was any third attempt. We were too scared.",
+      "It was only years later that I {{M12}} learn his secret; an abandoned, forgotten gold mine with veins of precious metal still unexhausted. He had feared, reasonably enough, that anyone else who knew {{M13}} try to eliminate the competition, and so he brought the gold out in pocket-sized instalments. Before his death, he surely {{M14}} realized that total secrecy meant total lack of profit, but he chose to die poor in the midst of wealth. He {{M15}} have! That was perfectly typical of him."
+    ],
+    gaps: {
+      M1: { her: "used to", ok: true, key: ["used to"], rule: "used to = past habit that is absolutely discontinued (‘which changed later on’).", page: "Reader p. 23" },
+      M2: { her: "had to", ok: false, key: ["must"],
+        hint: "“I’m totally convinced that …” – is this an obligation or a logical conclusion?",
+        why: "‘had to’ = past obligation (he was forced to). But the speaker is drawing a conclusion about what is going on.",
+        rule: "Logical necessity (deduction) → must: he must be running … (present, progressive infinitive).", page: "Reader p. 21" },
+      M3: { her: "was able to", ok: true, key: ["was able to"], rule: "be able to = past ability and its fulfilment (= could and did).", page: "Reader p. 23" },
+      M4: { her: "must", ok: false, key: ["had to"],
+        hint: "“Someone told us that we only ___ give …” – this is reported, in the past.",
+        why: "‘must’ normally changes to ‘had to’ when an obligation/necessity is reported in the past.",
+        rule: "Past necessity: ‘We must …’ → ‘Someone told us that we only had to …’.", page: "Reader p. 24 (past tense forms of modals)" },
+      M5: { her: "would be able to", ok: true, key: ["would be able to"], rule: "Future in the past of be able to.", page: "Reader pp. 19, 23" },
+      M6: { her: "might have", ok: true, key: ["might have"], rule: "Less likely possibility about the past: might have overheard.", page: "Reader pp. 21, 24" },
+      M7: { her: "might have", ok: false, key: ["may have"],
+        hint: "“Uncle Joe ___ been uneducated …, BUT he was nobody’s fool.” What does ‘may … but’ express?",
+        why: "‘might have’ only expresses possibility. The ‘…, but’ structure is a concession, and concession is expressed with MAY.",
+        rule: "Concession: may (have) … but = ‘I admit that …’ (He may be young, but he is very wise).", page: "Reader p. 23 (concession)" },
+      M8: { her: "shall", ok: false, key: ["had"],
+        hint: "Which modal idiom goes with ‘better’?",
+        why: "‘shall better’ does not exist.",
+        rule: "had better = strong advice with implied negative consequences (a threat in the note!).", page: "Reader p. 22" },
+      M9: { her: "had to", ok: false, key: ["can't"],
+        hint: "“Surely you ___ have missed the point?” – the writer can’t believe you missed it.",
+        why: "‘had to have missed’ is not a deduction pattern here. The note says: it is impossible that you missed the point.",
+        rule: "Negative deduction about the past: can’t / couldn’t have + past participle.", page: "Reader p. 21" },
+      M10: { her: "won't", ok: true, key: ["won't"], rule: "will/won’t in the if-clause = volition (if you refuse to leave a man in peace).", page: "Reader p. 18" },
+      M11: { her: "might", ok: false, key: ["needn't"],
+        hint: "There was no third attempt – they were too scared. Is there any reason to think there was one?",
+        why: "‘You might think …’ means ‘perhaps you think’. The narrator says the opposite: don’t bother thinking that.",
+        rule: "needn’t = absence of obligation, stressing the speaker’s authority: You needn’t think … (= there is no need to think).", page: "Reader p. 22" },
+      M12: { her: "was able to", ok: false, key: ["was to"],
+        hint: "“It was only years later that I ___ learn his secret” – the narrator knows now what he didn’t know then.",
+        why: "‘was able to’ (ability + fulfilment) was already needed for ‘he was able to hide’ – and here the meaning is fate/destiny, not ability.",
+        rule: "be to = ‘fate’: past events known to the speaker from the present but still unknown then (German: sollte erst Jahre später erfahren).", page: "Reader p. 23" },
+      M13: { her: "would", ok: false, key: ["might"],
+        hint: "He feared what somebody else ___ do – a certainty or a possibility?",
+        why: "‘would’ is grammatical here (future in the past), but the key expresses the possibility he feared → might. The bank decides it too: ‘would’ is needed for gap 15 (He WOULD have!).",
+        rule: "Possibility (less likely) → might.", page: "Reader p. 21" },
+      M14: { her: "must have", ok: true, key: ["must have"], rule: "Deduction about the past: must have realized.", page: "Reader p. 21" },
+      M15: { her: "needn't", ok: false, key: ["would"],
+        hint: "“He ___ have! That was perfectly typical of him.” Which modal expresses typical, characteristic behaviour?",
+        why: "‘He needn’t have’ would mean: he did it, but it wasn’t necessary. The next sentence (typical of him) points to characteristic behaviour.",
+        rule: "would = characteristic activity/habit in the past (stressed: He WOULD!).", page: "Reader p. 23" }
+    }
+  },
+
+  q4: {
+    id: "q4", kind: "type", width: "short",
+    instruction: "Fill in the correct relative pronoun and a comma when necessary. If a contact clause is a correct form, then it must be chosen and indicated by C.",
+    paras: [
+      "The 39 people {{R1}} bodies were discovered in Rancho Santa Fe, California, in March, 1997 were members of a group known as Heaven’s Gate, a concoction of New Age spirituality, distorted Christianity and space-age science fiction. The cult was formed in the 1970s by former college professor Marshall Herff Applewhite {{R2}} had sung for the Houston Grand Opera.",
+      "For several years the group camped high in the New Mexico mountains. They lived on arid land in a compound {{R3}} they called the “earth ship”. Then they moved to San Diego County, renting a house {{R4}} looked a bit like a spaceship. A few months later they took up residence in a hilltop mansion in Rancho Santa Fe {{R5}} they ran a business making computer websites.",
+      "Early in 1997 the Internet buzzed with news that a UFO or “companion object” had been detected in the shadow of the Hale-Bopp comet. The members of Heaven’s Gate {{R6}} were fascinated with exploring realms beyond human existence, believed that by killing themselves they could “graduate to a higher level”. They hoped to reach this level through a rendezvous with the UFO trailing behind Hale-Bopp. So they planned their mass suicide and packed their suitcases for {{R7}} they thought would be an intergalactic trip.",
+      "On March 22, the day {{R8}} Hale-Bopp made its closest approach to the Earth, the suicides began. The victims, many {{R9}} were programmers from New Mexico, Texas and California, apparently died in shifts, perhaps over a period of days. They were found by Rio D’Angelo, a former member of the cult. It was he {{R10}} placed the anonymous call to law enforcement officials advising them that they should check on the mansion."
+    ],
+    gaps: {
+      R1: { her: "whose", ok: true, key: ["whose"], rule: "Genitive case → whose.", page: "Reader p. 29" },
+      R2: { her: "who", ok: false, key: [", who"],
+        hint: "Does ‘who had sung for the Houston Grand Opera’ tell us WHICH Applewhite – or does it just add information about a named person?",
+        why: "‘who’ was the right pronoun, but the comma was missing. A clause after a proper name is non-defining.",
+        rule: "Non-defining clause (extra information; could be a new sentence) → commas. Proper names are already defined → normally non-defining (exception: ‘the Mr Smith who …’ picking out one of several people with that name).", page: "Reader pp. 27–28" },
+      R3: { her: "which", ok: false, key: ["C"], also: [", which"], flag: true,
+        hint: "Is the pronoun the subject or the object of ‘they called’? And what does the instruction say about contact clauses?",
+        why: "‘which’ is grammatical in a defining clause – but the pronoun is the OBJECT (they called it …), so a contact clause is possible, and the instruction says it MUST then be chosen.",
+        rule: "Defining clause + object (or stranded preposition) → relative pronoun can be omitted → C. Never C when the pronoun is the subject.", page: "Reader pp. 27, 29" },
+      R4: { her: "that", ok: true, key: ["that", "which"], rule: "Defining, subject case, non-personal → that/which (no C in subject case).", page: "Reader p. 29" },
+      R5: { her: ",", ok: false, key: [", where"], also: [", in which"],
+        hint: "A comma alone cannot join two clauses. What relative word refers to a place?",
+        why: "You saw that the clause needs a comma (good!) – but the relative word was missing.",
+        rule: "Place antecedent + non-defining clause → ‘, where’ (= in which). Rancho Santa Fe is a name → comma.", page: "Reader pp. 27–28" },
+      R6: { her: "C", ok: false, key: [", who"],
+        hint: "Look at the end of the clause: ‘…beyond human existence, believed that …’ – there is a comma before the main verb.",
+        why: "A contact clause is impossible when the pronoun is the subject (‘they were fascinated’). And the closing comma shows a non-defining clause.",
+        rule: "Subject case → never C. Commas around the clause → non-defining → ‘, who’.", page: "Reader pp. 28–29" },
+      R7: { her: "who", ok: false, key: ["what"],
+        hint: "Is there an antecedent (a noun) before the gap? ‘for ___ they thought would be an intergalactic trip.’",
+        why: "‘who’ needs a personal antecedent – there is none. The clause itself is the object of ‘for’.",
+        rule: "what = that which (nominal relative clause): for what they thought would be … = for the thing that they thought would be ….", page: "Reader p. 30 (what-clauses)" },
+      R8: { her: "C", ok: true, key: ["C"], rule: "Defining clause after ‘the day’ – relative word can be dropped → C.", page: "Reader p. 29" },
+      R9: { her: "who", ok: false, key: ["of whom"],
+        hint: "‘The victims, many ___ were programmers’ – many OF the victims.",
+        why: "‘many who were programmers’ would be a new defining clause about ‘many’. The meaning is a part of the whole group.",
+        rule: "Partitive relation: many / some / two / all OF WHOM (people), OF WHICH (things).", page: "Reader p. 28" },
+      R10: { her: "who", ok: true, key: ["who", "that"], rule: "Cleft sentence: It was he who …", page: "" }
+    }
+  }
+};
+
+const MC = [
+  { id: "mc1", q: "In which of the following cases is “to” not used as a preposition?", opts: ["Believe me, you will never get used to living in this small village.", "I used to go swimming twice a week but now I prefer reading at the pool.", "My best friend has a distinct aversion to eating fast food.", "Hard work is the only key to having everlasting success."], her: 1, ans: 1, why: "used to + infinitive = past habit (‘to’ = infinitive marker). get used to / aversion to / key to → preposition + gerund.", page: "Reader pp. 6, 12" },
+  { id: "mc2", q: "Compare the following non-finite verb forms:\n1. We saw the four thieves escaping over the fence.\n2. We saw the four thieves escape over the fence.", opts: ["There is no difference in meaning.", "The first sentence means that we only saw the final part of their escape, while the second sentence implies that we saw them while they were escaping.", "The first sentence suggests an incomplete action, the second a finished action.", "The first sentence implies that the whole action was seen, whereas the second expresses that only part of the action was seen."], her: 2, ans: 2, why: "-ing = action in progress (incomplete); bare infinitive = the complete action.", page: "Reader p. 11" },
+  { id: "mc3", q: "How many of the following sentences do not express the speaker’s regret for a past action correctly?\n• I regret to turn down the company’s interesting job offer last month.\n• I regret having turned down the company’s interesting job offer last month.\n• I regret turning down the company’s interesting job offer last month.\n• I regret to have turned down the company’s interesting job offer last month.", opts: ["4", "2", "3", "1"], her: 2, ans: 1,
+    why: "Regret about the PAST = regret + gerund (simple ‘turning down’ OR perfect ‘having turned down’ – both correct). regret + to-infinitive = polite regret about what I am ABOUT to say (I regret to inform you …). So only the two ‘regret to …’ sentences are wrong → 2. You had exactly this right in the mock test – trust the simple gerund!", page: "Reader p. 10" },
+  { id: "mc4", q: "We are going to the Nickelback concert tonight. – The verb form in this sentence expresses", opts: ["the speaker’s intention.", "the speaker’s spontaneous decision.", "a future intention with present arrangement.", "a conclusion based on evidence."], her: 2, ans: 2, why: "Present progressive for the future = intention with present arrangement.", page: "Reader p. 17" },
+  { id: "mc5", q: "If I became President of the USA, I would put an end to all misery in the world. – This is, grammatically speaking,", opts: ["an open condition.", "an impossible condition.", "a probable condition.", "an improbable condition."], her: 1, ans: 3,
+    why: "The reader names the patterns by FORM: if + present / will = probable · if + past / would = improbable · if + past perfect / would have = impossible. ‘became … would put’ = past + conditional I → improbable – even if becoming President feels impossible in real life! (‘open condition’ isn’t the reader’s term.)", page: "Reader p. 18" },
+  { id: "mc6", q: "Which of the following is not an example of the modal past?", opts: ["It’s a good thing you came home so early yesterday.", "He looks as if he were going to explode any minute.", "It’s high time you started looking for a decent job.", "Sometimes I wish I had never come to this mean old town."], her: 1, ans: 0,
+    why: "Modal past = past form with hypothetical meaning after as if, if only, wish, it’s high time … (‘were’ is exactly that – past subjunctive). ‘came home so early yesterday’ is a REAL past event at a definite time (‘yesterday’) → not modal.", page: "Reader pp. 15–16" },
+  { id: "mc7", q: "Which of the following modals expresses a strong obligation?", opts: ["It is 2 a.m. You must come home earlier.", "Listen: This is a no parking zone; therefore, you cannot park your car here.", "Bank employees may always be suitably dressed.", "What are you doing in the kitchen? You should be in bed."], her: 0, ans: 0, why: "must = strong obligation, the speaker’s authority.", page: "Reader p. 22" },
+  { id: "mc8", q: "Which of the following modals can express a promise?", opts: ["can", "would", "will", "should"], her: 2, ans: 2, why: "will = willingness: statement of intention or a promise.", page: "Reader p. 22" },
+  { id: "mc9", q: "How many relative pronouns can introduce a contact clause?", opts: ["2", "3", "0", "1"], her: 0, ans: 2,
+    why: "A contact clause is BY DEFINITION a clause without a relative pronoun (zero pronoun, ‘C’): the book Ø I read. So: 0.", page: "Reader pp. 27, 29" },
+  { id: "mc10", q: "1. The travellers who knew about the floods took another road.\n2. The travellers, who knew about the floods, took another road.\nWhich meaning of the relative clauses is correct?", opts: ["Both sentences 1 and 2 imply that only those who knew about the floods took another road.", "Sentence 1 means that only those who knew about the floods took the other road but there were others who did not know and took the flooded road. Sentence 2 implies that all the travellers knew about the floods and took the other road.", "Sentence 1 suggests that all the travellers knew about the floods and took the other road. Sentence 2 means that only those who knew about the floods took the other road but there were others who did not know and took the flooded road.", "Both sentences 1 and 2 indicate that all the travellers had been informed about the floods before and therefore took another road."], her: 2, ans: 1,
+    why: "You had it the wrong way round. NO commas = defining = it restricts the group (only those travellers who knew). Commas = non-defining = extra info about ALL travellers (all of them knew).", page: "Reader p. 27" },
+  { id: "mc11", q: "Which word order is correct?", opts: ["So severe the symptoms became after their car crash that they consulted the family doctor.", "So severe did the symptoms become after their car crash that they consulted the family doctor.", "So severe became the symptoms after their car crash that they consulted the family doctor.", "So severe the symptoms did become after their car crash that they consulted the family doctor."], her: 1, ans: 1, why: "‘So’ at the front → inversion; simple verb (become) → do-paraphrase.", page: "Reader pp. 36–37" },
+  { id: "mc12", q: "“Nonetheless”, “no doubt” and “in no time” are adverbials that", opts: ["do not require inversion.", "require inversion because they give emphasis to a statement.", "require inversion because of their negative or restrictive sense.", "require inversion because they can only be used at the beginning of a statement."], her: 1, ans: 0,
+    why: "Learn the reader’s NO-inversion list – it is built from look-alikes: no doubt · in no time · nevertheless · nonetheless · occasionally · without exception · not far from · not long after · even so · with no difficulty at all. ‘No doubt she is right.’ (no inversion).", page: "Reader p. 37" },
+  { id: "mc13", q: "Which of the following is not an adverb of time?", opts: ["soon", "still", "recently", "sometimes"], her: 3, ans: 3, why: "sometimes = adverb of (indefinite) frequency.", page: "Reader p. 33" },
+  { id: "mc14", q: "For almost twenty years she has been the Head of the Department of Microbiology. – Is the definite article before “Head” correct or not? “The” is", opts: ["incorrect and should be skipped because this is a unique position.", "correct because “Head” is followed by an of-genitive.", "incorrect and should be replaced by the indefinite article because this is the name of a profession.", "correct because professions take the definite article."], her: 0, ans: 0, why: "Unique position or title → no article (He was appointed Head Librarian).", page: "Reader p. 39" },
+  { id: "mc15", q: "“Own” usually takes", opts: ["the definite article.", "the definite or indefinite article.", "the indefinite article.", "a possessive determiner."], her: 2, ans: 3,
+    why: "Before ‘own’ a possessive determiner has to be added: my own car, her own flat – never *an own car (that’s the German ‘ein eigenes’ trap).", page: "Reader p. 40" }
+];
+
+const RULES = [
+  { group: "Non-finites", items: [
+    { id: "r-prep", title: "“Add a preposition when necessary” – check EVERY gap", body: [
+      "Verb/adjective + preposition + <b>-ing</b>: insist <b>on</b> doing · be interested <b>in</b> doing · be used <b>to</b> doing · look forward <b>to</b> doing · object <b>to</b> doing · apologise <b>for</b> doing.",
+      "Before you type, ask: does this verb/adjective need a preposition? If yes, the preposition belongs IN the gap."],
+      yours: "insisted <b>traveling</b> → insisted <b>on travelling</b> · interested <b>listening</b> → interested <b>in listening</b>", page: "Reader p. 11" },
+    { id: "r-gerund", title: "Gerund-only verbs", body: [
+      "suggest · consider (= think about) · avoid · deny · enjoy · give up · mind · risk · imagine · admit · miss · practise · can’t help · it’s worth · feel like.",
+      "<span class='ex'>He suggested going.</span> – never *suggested to go."],
+      yours: "suggested <b>to go</b> → <b>going</b> · considered <b>to leave</b> → <b>leaving</b>", page: "Reader p. 6" },
+    { id: "r-meaning", title: "Same verb, different meaning", body: [
+      "regret <b>doing</b> = sorry about the past · regret <b>to say</b> = sorry about what I’m about to say.",
+      "remember/forget <b>doing</b> = memory of the past · remember/forget <b>to do</b> = a duty.",
+      "consider <b>doing</b> = think about · consider sb <b>to be</b> = regard as. stop <b>doing</b> / stop <b>to do</b>."],
+      yours: "MC: ‘I regret turning down … last month’ is CORRECT (simple gerund works for the past too).", page: "Reader p. 10" }
+  ]},
+  { group: "Tense & aspect", items: [
+    { id: "r-default", title: "Simple past is the default – past perfect only for ‘earlier than’", body: [
+      "Past facts and states at a definite time → simple past (he wasn’t there at 8:59; he was gleeful).",
+      "Past perfect ONLY if something happened BEFORE another past point (the pages had been removed before we arrived)."],
+      yours: "<b>had not been</b> → was not · <b>had been</b> gleeful → was (being) gleeful", page: "Reader pp. 15–16" },
+    { id: "r-prog", title: "Past progressive = background frame", body: [
+      "Something was going on when something else happened: <span class='ex'>somebody was feeling around in a drawer, and there at the back was a list …</span>",
+      "Situation in progress around a past time: <span class='ex'>Once, before the final test, we were having a bad time.</span>",
+      "be + adjective in the progressive = temporary behaviour: <span class='ex'>he was being gleeful (although it wasn’t in his nature)</span>."],
+      yours: "<b>had</b> → were having · <b>felt</b> → was feeling", page: "Reader pp. 14, 16" },
+    { id: "r-narrator", title: "Spot the narrator’s ‘now’ inside a past story", body: [
+      "Comments the narrator makes while writing stay in the present/future: <span class='ex'>whom I will call “Chuck” for the purposes of the following story</span> · <span class='ex'>I regret that … – I would not be telling the truth now …</span>",
+      "Descriptions INSIDE the story stay past: <span class='ex'>It wasn’t his real name, but he looked like a woodchuck.</span>"],
+      yours: "<b>called</b> → will call · <b>looks</b> → looked · <b>regreted</b> → regret", page: "Reader pp. 14–17" },
+    { id: "r-fip", title: "Future in the past: would (be -ing)", body: [
+      "After a past verb of expecting/thinking/saying, ‘will’ becomes ‘would’: we expected: “he will be standing there” → <span class='ex'>we had expected that he would be standing there</span>."],
+      yours: "<b>stood</b> → would be standing", page: "Reader pp. 17, 19" },
+    { id: "r-cond", title: "Conditionals: read the main clause FIRST", body: [
+      "will → if + present (probable) · <b>would</b> → if + <b>past</b> (improbable) · <b>would have</b> → if + <b>past perfect</b> (impossible).",
+      "Bracketed adverbs go after the first auxiliary: <span class='ex'>had simply reused · would not constantly be</span>."],
+      yours: "<b>spend</b> → spent · <b>simply reused</b> → had simply reused", page: "Reader pp. 18, 34" },
+    { id: "r-spell", title: "Spelling counts in Moodle", body: [
+      "Double the final consonant when the word ends in ONE vowel letter + ONE consonant and the last syllable is stressed: stop → stopped, regret → <b>regretted</b>, prefer → preferred, occur → occurred (but: visit → visited, offer → offered).",
+      "Separate BE rule for -l: travel → travelled (AE traveled) – stick to one variety."],
+      yours: "<b>regreted</b> ✗", page: "" }
+  ]},
+  { group: "Modals", items: [
+    { id: "r-deduct", title: "Deduction: must vs can’t", body: [
+      "Sure it’s true → <b>must</b> (be -ing) / <b>must have</b> + past participle.",
+      "Sure it’s NOT true → <b>can’t</b> / <b>can’t have</b> + past participle. <span class='ex'>Surely you can’t have missed the point?</span>",
+      "For deduction the reader uses must / must have and can’t / can’t have. ‘had to’ is the past of obligation-must (Someone told us we had to …) – don’t use it for a deduction in the exam."],
+      yours: "<b>had to</b> be running → must · <b>had to</b> have missed → can’t", page: "Reader p. 21" },
+    { id: "r-may", title: "may … but = concession", body: [
+      "<span class='ex'>He may be young, but he is very wise.</span> = I admit that he is young … · past: <span class='ex'>He may have been uneducated, but he was nobody’s fool.</span>",
+      "might = only a (less likely) possibility – no ‘but’-contrast needed."],
+      yours: "<b>might have</b> been uneducated → may have", page: "Reader pp. 21, 23" },
+    { id: "r-idioms", title: "Modal idioms you must recognise", body: [
+      "<b>had better</b> = strong advice with a threat (never ‘shall/should better’).",
+      "<b>needn’t</b> = no need · <b>needn’t have done</b> = did it, but unnecessary.",
+      "<b>was to</b> = fate: <span class='ex'>It was only years later that I was to learn his secret.</span> (sollte erst … erfahren)",
+      "<b>would</b> = typical behaviour in the past: <span class='ex'>He would! That was typical of him.</span> · <b>used to</b> = discontinued habit.",
+      "<b>had to</b> = past of must: <span class='ex'>Someone told us that we only had to give the dog a sniff.</span>"],
+      yours: "<b>shall</b> better → had · <b>might</b> think → needn’t · <b>was able to</b> learn → was to · <b>needn’t</b> have → would · <b>must</b> give → had to · <b>would</b> try → might", page: "Reader pp. 22–24" },
+    { id: "r-bank", title: "Drag-and-drop strategy", body: [
+      "Fill the sure gaps first, then work by elimination.",
+      "In July the 15 official answers used 15 different bank items; shall and should were the 2 distractors. You used ‘had to’, ‘might have’ AND ‘was able to’ twice each – that was the warning sign. (In the mock test ‘would’ was the answer twice, so treat this as a check, not a law.)"],
+      yours: "", page: "" }
+  ]},
+  { group: "Relative clauses", items: [
+    { id: "r-comma", title: "The comma test", body: [
+      "Can the clause be removed and turned into a new sentence? → non-defining → <b>commas</b>. In the gap: <span class='kbd'>, who</span> / <span class='kbd'>, which</span> / <span class='kbd'>, where</span>.",
+      "Names (Applewhite, Rancho Santa Fe) are already defined → normally commas.",
+      "If you see a comma closing the clause later in the sentence (‘…existence, believed’), it’s non-defining."],
+      yours: "Applewhite <b>who</b> → , who · Heaven’s Gate <b>C</b> → , who · Rancho Santa Fe <b>,</b> → , where", page: "Reader pp. 27–28" },
+    { id: "r-contact", title: "Contact clause (C)", body: [
+      "Only in DEFINING clauses, and only when the pronoun is NOT the subject: object (<span class='ex'>a compound C they called the “earth ship”</span>), stranded preposition (<span class='ex'>the castles C I read about</span>), or when/that after time nouns (<span class='ex'>the day C Hale-Bopp made its closest approach</span>).",
+      "If C is possible, the instruction says you MUST choose C.",
+      "A contact clause contains 0 relative pronouns."],
+      yours: "compound <b>which</b> → C · MC: ‘2’ → 0", page: "Reader pp. 27, 29" },
+    { id: "r-what", title: "what = that which · of whom / of which", body: [
+      "No noun before the gap → <b>what</b>: <span class='ex'>packed their suitcases for what they thought would be a trip</span>.",
+      "Part of a group: many / some / two / all <b>of whom</b> (people), <b>of which</b> (things)."],
+      yours: "for <b>who</b> → what · many <b>who</b> → of whom", page: "Reader pp. 28, 30" }
+  ]},
+  { group: "Theory traps (MC)", items: [
+    { id: "r-condnames", title: "Condition names = FORM, not real-life likelihood", body: [
+      "if + present / will → <b>probable</b> · if + past / would → <b>improbable</b> · if + past perfect / would have → <b>impossible</b>."],
+      yours: "‘If I became President … I would’ → improbable (you chose impossible)", page: "Reader p. 18" },
+    { id: "r-modalpast", title: "Modal past vs real past", body: [
+      "Modal past = past form, hypothetical meaning: wish · if only · as if · it’s high time · I’d rather · (were).",
+      "A real past time marker (yesterday, last week) → normal past, NOT modal."],
+      yours: "‘as if he were’ IS modal past – ‘came home so early yesterday’ is not", page: "Reader pp. 15–16" },
+    { id: "r-noinv", title: "No inversion after these look-alikes", body: [
+      "no doubt · in no time · nevertheless · nonetheless · occasionally · without exception · not far from · not long after · even so · with no difficulty at all.",
+      "Inversion after negative/restrictive adverbials: never, seldom, hardly, rarely, only, not only, no sooner, under no circumstances, on no account, little, so, such, neither, nor.", "Also: exclamations with here/there/up/down/off/back + NOUN subject (Here comes the bride!) – but not with a pronoun (Off we go!)."],
+      yours: "You chose ‘require inversion because they give emphasis’", page: "Reader pp. 36–37" },
+    { id: "r-own", title: "own · unique positions", body: [
+      "Possessive determiner before own: <b>my/her/their own</b> (never *an own).",
+      "No article with unique positions and titles: She was appointed Head of Department."],
+      yours: "‘own’ → indefinite article ✗", page: "Reader pp. 39–40" }
+  ]}
+];
+
+/* New transfer drills. type = typed gap · mc = choose */
+const DRILLS = [
+  // Non-finites
+  { id: "nf1", cat: "nonfinite", type: "type", q: "The guide suggested (visit) ___ the old harbour first.", keys: ["visiting"], why: "suggest + gerund.", page: "p. 6" },
+  { id: "nf2", cat: "nonfinite", type: "type", q: "In the end she insisted (pay) ___ for everyone’s coffee.", keys: ["on paying"], why: "insist on + gerund – the preposition belongs in the gap.", page: "p. 11" },
+  { id: "nf3", cat: "nonfinite", type: "type", q: "For a while we seriously considered (sell) ___ the car.", keys: ["selling"], why: "consider = think about → gerund.", page: "p. 10" },
+  { id: "nf4", cat: "nonfinite", type: "type", q: "Most of the students were not interested (read) ___ the whole novel.", keys: ["in reading"], why: "interested in + gerund.", page: "p. 11" },
+  { id: "nf5", cat: "nonfinite", type: "type", q: "I’m really looking forward (meet) ___ your parents.", keys: ["to meeting"], why: "look forward to: ‘to’ is a preposition → gerund.", page: "pp. 6, 11" },
+  { id: "nf6", cat: "nonfinite", type: "type", q: "After ten years in Scotland she was used (drive) ___ on the left.", keys: ["to driving"], why: "be used to + gerund = be accustomed to.", page: "p. 12" },
+  { id: "nf7", cat: "nonfinite", type: "type", q: "As a child, my father used (walk) ___ to school every day.", keys: ["to walk"], why: "used to + infinitive = past habit (‘to’ = infinitive marker).", page: "p. 12" },
+  { id: "nf8", cat: "nonfinite", type: "type", q: "The kitchen walls really need (paint) ___.", keys: ["painting", "to be painted"], why: "need + active gerund with passive meaning – or need + passive infinitive.", page: "p. 12" },
+  { id: "nf9", cat: "nonfinite", type: "type", q: "Would you mind (close) ___ the door?", keys: ["closing"], why: "mind (neg./interrog.) + gerund.", page: "p. 6" },
+  { id: "nf10", cat: "nonfinite", type: "type", q: "I regret (inform) ___ you that your flight has been cancelled.", keys: ["to inform"], why: "regret + to-infinitive = sorry about what I’m about to say (polite).", page: "p. 10" },
+  { id: "nf11", cat: "nonfinite", type: "type", q: "Looking back, he regretted (not / accept) ___ the job offer.", keys: ["not accepting", "not having accepted"], why: "regret + gerund = sorry about something that happened (simple or perfect gerund).", page: "p. 10" },
+  { id: "nf12", cat: "nonfinite", type: "type", q: "Remember (switch off) ___ the lights when you leave tonight!", keys: ["to switch off"], why: "remember + to-infinitive = a duty still to be done.", page: "p. 10" },
+  { id: "nf13", cat: "nonfinite", type: "type", q: "The children objected (be) ___ sent to bed so early.", keys: ["to being"], why: "object to: ‘to’ is a preposition → gerund (cf. objection to).", page: "pp. 6, 11" },
+  { id: "nf14", cat: "nonfinite", type: "type", q: "She made her little brother (apologize) ___.", keys: ["apologize", "apologise"], why: "make sb do sth → bare infinitive.", page: "p. 8" },
+  { id: "nf15", cat: "nonfinite", type: "type", q: "He finally gave up (try) ___ to convince his boss.", keys: ["trying"], why: "give up + gerund.", page: "p. 6" },
+  { id: "nf16", cat: "nonfinite", type: "type", q: "They flatly refused (accept) ___ the new rules.", keys: ["to accept"], why: "refuse + to-infinitive.", page: "p. 7" },
+
+  // Tense & aspect
+  { id: "ta1", cat: "tense", type: "type", q: "When the fire alarm went off, we (to sit) ___ in the lecture hall.", keys: ["were sitting"], why: "Background action in progress when a shorter event cut in → past progressive.", page: "p. 16" },
+  { id: "ta2", cat: "tense", type: "type", q: "One evening, my brother (to search) ___ through some old boxes in the attic when he found our grandmother’s diary.", keys: ["was searching"], why: "Time inclusion: background (past progressive) + interrupting event (simple past).", page: "p. 16" },
+  { id: "ta3", cat: "tense", type: "type", q: "There was one colleague in that office whom I (to call) ___ “Mr X” for the purposes of the following story – it isn’t his real name.", keys: ["will call", "shall call", "'ll call"], also: ["am going to call"], why: "Past story, but the narrator chooses the name NOW for ‘the following story’ → will-future (exactly like ‘Chuck’).", page: "p. 17" },
+  { id: "ta4", cat: "tense", type: "type", q: "It was strange that my sister (not to be) ___ at the party last night – she never misses a party.", keys: ["was not", "wasn't"], why: "Same time as ‘it was strange’, definite time ‘last night’ → simple past, no past perfect.", page: "pp. 15–16" },
+  { id: "ta5", cat: "tense", type: "type", q: "We had expected that our guide (to wait) ___ for us at the station at six, but nobody was there.", keys: ["would be waiting", "'d be waiting"], also: ["would wait", "'d wait"], why: "Future in the past (we expected: he will be waiting) → would + progressive.", page: "pp. 17, 19" },
+  { id: "ta6", cat: "tense", type: "type", q: "The manager was angry about the delay. At the same time, she (to be) ___ secretly relieved.", keys: ["was"], why: "‘At the same time’ = same time as ‘was angry’ → nothing earlier, so no past perfect. ‘be relieved’ is a state → no progressive → simple past: was.", page: "pp. 14, 16" },
+  { id: "ta7", cat: "tense", type: "type", q: "If you (to practise) ___ a little every day, you would not have to panic before every exam.", keys: ["practised", "practiced"], also: ["were to practise", "were to practice"], why: "Improbable condition: if + past, main clause would.", page: "p. 18" },
+  { id: "ta8", cat: "tense", type: "type", q: "It would have been much easier if someone (to tell) ___ us about the change in advance.", keys: ["had told"], why: "Impossible condition: would have → if + past perfect.", page: "p. 18" },
+  { id: "ta9", cat: "tense", type: "type", q: "If he (to simply ask) ___ for help, we would have helped him.", keys: ["had simply asked"], why: "Impossible condition; adverb after the first auxiliary.", page: "pp. 18, 34" },
+  { id: "ta10", cat: "tense", type: "type", q: "When we finally got to the cinema, the film (to already start) ___.", keys: ["had already started"], why: "Past perfect: earlier than the past point ‘when we got there’; ‘already’ after the first auxiliary.", page: "pp. 16, 34" },
+  { id: "ta11", cat: "tense", type: "type", q: "I had not worked there for very long when I (to notice) ___ the first problems.", keys: ["noticed"], why: "The new event that marks the past point → simple past.", page: "p. 16" },
+  { id: "ta12", cat: "tense", type: "type", q: "As soon as I saw the result, I (to regret) ___ my decision.", keys: ["regretted"], why: "Simple past – and spelling: regreTTed.", page: "" },
+  { id: "ta13", cat: "tense", type: "type", q: "Last summer we (to travel) ___ through Portugal by train.", keys: ["travelled", "traveled"], why: "Unitary past (‘last summer’). BE travelled / AE traveled.", page: "p. 15" },
+  { id: "ta14", cat: "tense", type: "type", q: "In those days, mobile phones (to be) ___ still very expensive.", keys: ["were"], why: "Past state → simple past.", page: "p. 15" },
+  { id: "ta15", cat: "tense", type: "type", q: "Look at these old photos! I still (to remember) ___ that day very well.", keys: ["remember"], why: "The speaker’s present: state verb of cognition → simple present.", page: "p. 14" },
+
+  // Modals
+  { id: "md1", cat: "modal", type: "mc", q: "The streets are wet – it ___ have rained during the night.", opts: ["must", "can’t", "needn’t", "had better"], ans: 0, why: "Deduction from present evidence → must have + past participle.", page: "p. 21" },
+  { id: "md2", cat: "modal", type: "mc", q: "She ___ have seen me – I was hiding behind the curtain the whole time.", opts: ["can’t", "must", "needn’t", "would"], ans: 0, why: "Negative deduction → can’t have + past participle.", page: "p. 21" },
+  { id: "md3", cat: "modal", type: "mc", q: "All right, I admit it: he ___ be rich, but he is certainly not happy.", opts: ["may", "needn’t", "had better", "was to"], ans: 0, why: "Concession: may … but = I admit that …", page: "p. 23" },
+  { id: "md4", cat: "modal", type: "mc", q: "You ___ better apologise before she finds out!", opts: ["had", "should", "would", "shall"], ans: 0, why: "had better = strong advice with implied consequences.", page: "p. 22" },
+  { id: "md5", cat: "modal", type: "mc", q: "You ___ bring anything to the party – we have plenty of food.", opts: ["needn’t", "mustn’t", "can’t", "might"], ans: 0, why: "Absence of obligation → needn’t (mustn’t = prohibition).", page: "p. 22" },
+  { id: "md6", cat: "modal", type: "mc", q: "They said goodbye at the station, not knowing that they ___ meet again only twenty years later, in Rome.", opts: ["were to", "were able to", "had to", "used to"], ans: 0, why: "be to = fate: known to the narrator now, unknown to them then.", page: "p. 23" },
+  { id: "md7", cat: "modal", type: "mc", q: "Don’t leave your bag there – somebody ___ take it.", opts: ["might", "needn’t", "was to", "had better"], ans: 0, why: "(Less likely) possibility → might.", page: "p. 21" },
+  { id: "md8", cat: "modal", type: "mc", q: "Every evening my grandfather ___ sit on the porch and tell stories – that was so typical of him.", opts: ["would", "should", "might", "must"], ans: 0, why: "Characteristic habit in the past → would.", page: "p. 23" },
+  { id: "md9", cat: "modal", type: "mc", q: "We ___ run, because the last bus was leaving in two minutes.", opts: ["had to", "must", "needn’t", "may"], ans: 0, why: "Past necessity from external circumstances → had to.", page: "pp. 22, 24" },
+  { id: "md10", cat: "modal", type: "mc", q: "Yesterday, thanks to the map, they ___ find the hut before nightfall and spent the night in safety.", opts: ["were able to", "might", "were to", "needn’t"], ans: 0, why: "Past ability + fulfilment (= could and did) → be able to.", page: "p. 23" },
+  { id: "md11", cat: "modal", type: "mc", q: "I ___ have taken a taxi – the station was just around the corner.", opts: ["needn’t", "mustn’t", "can’t", "would"], ans: 0, why: "needn’t have + past participle = I did it, but it wasn’t necessary.", page: "p. 24" },
+  { id: "md12", cat: "modal", type: "mc", q: "If you ___ stop shouting, I’ll call the police.", opts: ["won’t", "had better", "needn’t", "mustn’t"], ans: 0, why: "will/won’t in the if-clause = volition (if you refuse to …).", page: "p. 18" },
+  { id: "md13", cat: "modal", type: "mc", q: "Surely you ___ have forgotten my birthday again?", opts: ["can’t", "must", "needn’t", "had better"], ans: 0, why: "Surely … can’t have = disbelief, negative deduction.", page: "p. 21" },
+
+  // Relative clauses
+  { id: "rc1", cat: "relative", type: "type", q: "My aunt Clara ___ lives in Vienna, is visiting us next week.", keys: [", who"], why: "Proper name → non-defining → comma + who.", page: "pp. 27–28" },
+  { id: "rc2", cat: "relative", type: "type", q: "The book ___ you lent me was brilliant.", keys: ["C"], why: "Defining, object case → contact clause possible → C.", page: "p. 29" },
+  { id: "rc3", cat: "relative", type: "type", q: "Last year I visited Lisbon ___ I spent hours in dozens of museums.", keys: [", where"], also: [", in which"], why: "Place name + extra information → , where.", page: "pp. 27–28" },
+  { id: "rc4", cat: "relative", type: "type", q: "Nobody believed ___ she had seen in the forest.", keys: ["what"], why: "No antecedent → what (= that which).", page: "p. 30" },
+  { id: "rc5", cat: "relative", type: "type", q: "The applicants, many ___ had travelled for hours, were exhausted.", keys: ["of whom"], why: "Partitive, people → of whom.", page: "p. 28" },
+  { id: "rc6", cat: "relative", type: "type", q: "He bought twelve eggs, three ___ were broken.", keys: ["of which"], why: "Partitive, things → of which.", page: "p. 28" },
+  { id: "rc7", cat: "relative", type: "type", q: "The woman ___ car had been stolen called the police.", keys: ["whose"], why: "Genitive case → whose.", page: "p. 29" },
+  { id: "rc8", cat: "relative", type: "type", q: "Students ___ hand in late will lose points.", keys: ["who", "that"], why: "Defining, subject case → who/that. Never C for the subject.", page: "p. 29" },
+  { id: "rc9", cat: "relative", type: "type", q: "Last night Jill called me a liar ___ I found more than insulting.", keys: [", which"], why: "Refers to the whole clause → connective clause , which.", page: "p. 30" },
+  { id: "rc10", cat: "relative", type: "type", q: "The colleague ___ I was talking to is from Leeds.", keys: ["C"], why: "Defining, stranded preposition → contact clause possible → C.", page: "p. 29" },
+  { id: "rc11", cat: "relative", type: "type", q: "Mount Everest ___ is the highest mountain on earth, attracts thousands of climbers.", keys: [", which"], why: "Unique name → non-defining; thing → which.", page: "p. 28" },
+  { id: "rc12", cat: "relative", type: "type", q: "I will never forget the night ___ we first met.", keys: ["C"], why: "Defining clause after ‘the night/day/year’ – the relative word can be dropped → C (like ‘the day C Hale-Bopp …’). ‘when/that’ are grammatical, but the exam rule says C must be chosen whenever it is possible.", page: "p. 29" },
+
+  // Theory MC
+  { id: "th1", cat: "theory", type: "mc", q: "Which sentence expresses an improbable condition?", opts: ["If it rains, we will stay at home.", "If I won the lottery, I would buy a farm.", "If I had known, I would have come.", "If you heat ice, it melts."], ans: 1, why: "if + past, would + infinitive = improbable. (1 = probable, 3 = impossible, 4 = universal fact.)", page: "p. 18" },
+  { id: "th2", cat: "theory", type: "mc", q: "If she had left earlier, she would have caught the train. – This is grammatically speaking …", opts: ["a probable condition.", "an improbable condition.", "an impossible condition.", "an open condition."], ans: 2, why: "if + past perfect, would have = impossible condition.", page: "p. 18" },
+  { id: "th3", cat: "theory", type: "mc", q: "Which of the following is NOT an example of the modal past?", opts: ["I wish I knew her number.", "It’s high time we left.", "If only he were here!", "We left the party at midnight yesterday."], ans: 3, why: "‘yesterday’ = real past (unitary past). The others are hypothetical.", page: "p. 15" },
+  { id: "th4", cat: "theory", type: "mc", q: "Which adverbial at the beginning of a sentence requires inversion?", opts: ["Nevertheless", "In no time", "Under no circumstances", "No doubt"], ans: 2, why: "Negative/restrictive → inversion (Under no circumstances will I …). The others are on the no-inversion list.", page: "p. 37" },
+  { id: "th5", cat: "theory", type: "mc", q: "Which word order is correct?", opts: ["In no time did they finish the job.", "In no time they finished the job.", "In no time finished they the job.", "In no time had they finished the job."], ans: 1, why: "‘in no time’ (= very quickly) is not restrictive → normal word order.", page: "p. 37" },
+  { id: "th6", cat: "theory", type: "mc", q: "Which sentence is correct?", opts: ["She has an own flat in Bochum.", "She has her own flat in Bochum.", "She has the own flat in Bochum.", "She has own flat in Bochum."], ans: 1, why: "Possessive determiner before own.", page: "p. 40" },
+  { id: "th7", cat: "theory", type: "mc", q: "A contact clause is …", opts: ["a defining relative clause without a relative pronoun.", "a non-defining relative clause introduced by ‘that’.", "any relative clause introduced by ‘who’ or ‘which’.", "a relative clause that refers to a whole sentence."], ans: 0, why: "C = zero pronoun, only in defining clauses (object/prepositional case).", page: "pp. 27, 29" },
+  { id: "th8", cat: "theory", type: "mc", q: "1. The students who failed the test had to repeat it.\n2. The students, who failed the test, had to repeat it.\nWhich interpretation is correct?", opts: ["Both mean that all the students failed.", "1: only some students failed; 2: all the students failed.", "1: all the students failed; 2: only some students failed.", "Both mean that only some students failed."], ans: 1, why: "No commas = defining (restricts the group). Commas = non-defining (applies to all).", page: "p. 27" },
+  { id: "th9", cat: "theory", type: "mc", q: "I regret ___ you that your application was unsuccessful.", opts: ["to inform", "informing", "having informed", "to have informed"], ans: 0, why: "regret + to-infinitive = sorry for what I’m about to say.", page: "p. 10" },
+  { id: "th10", cat: "theory", type: "mc", q: "How many of these sentences express regret for a past action correctly?\n• I regret missing your party.\n• I regret to miss your party last week.\n• I regret having missed your party.\n• I regret to have missed your party.", opts: ["1", "2", "3", "4"], ans: 1, why: "Correct: regret missing / regret having missed. Wrong: both ‘regret to …’. (Careful: the exam asked how many are NOT correct – read the question!)", page: "p. 10" },
+  { id: "th11", cat: "theory", type: "mc", q: "You needn’t have cooked for me. – This means …", opts: ["You cooked, but it was not necessary.", "You didn’t cook, and that was fine.", "You were not allowed to cook.", "You will not have to cook."], ans: 0, why: "needn’t have + past participle: the action happened but was unnecessary.", page: "p. 24" },
+  { id: "th12", cat: "theory", type: "mc", q: "In which sentence is ‘to’ a preposition?", opts: ["I used to play the piano.", "I am used to getting up early.", "I want to leave now.", "She seems to be tired."], ans: 1, why: "be used to + gerund: ‘to’ is a preposition.", page: "p. 12" }
+];
+
+const CATS = [
+  { id: "all", label: "All" },
+  { id: "nonfinite", label: "Non-finites" },
+  { id: "tense", label: "Tense & conditionals" },
+  { id: "modal", label: "Modals" },
+  { id: "relative", label: "Relatives" },
+  { id: "theory", label: "Theory MC" }
+];
+
+const PLAN = [
+  { id: "p1", time: "20 min", text: "Fix my exam → <b>Tense & aspect</b> (10 gaps – your biggest leak)" },
+  { id: "p2", time: "15 min", text: "Fix my exam → <b>Modals</b> (9 gaps)" },
+  { id: "p3", time: "10 min", text: "Fix my exam → <b>Relatives</b> (6) and <b>Non-finites</b> (4)" },
+  { id: "p4", time: "10 min", text: "Fix my exam → <b>Theory MC</b> (7 questions)" },
+  { id: "p5", time: "15 min", text: "Repair kit: read every card, tick what you could explain to someone else" },
+  { id: "p6", time: "30 min", text: "New drills: all categories once, then <b>Only not yet right</b> until it’s empty" },
+  { id: "p7", time: "5 min", text: "Fix my exam: switch to <b>Whole text again</b> for Tense & Modals – can you do the whole text cleanly?" },
+  { id: "p8", time: "Morning", text: "15 min max: Exam day page + only red drills. No new material." }
+];
+
+/* =========================================================================
+   STATE
+   ========================================================================= */
+const STORE_KEY = "resitRepair.v1";
+let S = { ui: { view: "plan", task: "q2", mode: {}, cat: "all", openOnly: false, mcAll: false }, gaps: {}, mc: {}, drills: {}, rules: {}, plan: {} };
+try {
+  const raw = localStorage.getItem(STORE_KEY);
+  if (raw) { const saved = JSON.parse(raw); S = Object.assign(S, saved); S.ui = Object.assign({ view: "plan", task: "q2", mode: {}, cat: "all", openOnly: false, mcAll: false }, saved.ui || {}); }
+} catch (e) { /* storage unavailable – run in memory */ }
+function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(S)); } catch (e) { /* ignore */ } }
+
+/* =========================================================================
+   HELPERS
+   ========================================================================= */
+const $ = (sel, root = document) => root.querySelector(sel);
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function norm(s) {
+  return String(s || "").toLowerCase()
+    .replace(/[’‘`´]/g, "'").replace(/[“”]/g, '"')
+    .replace(/\s*,\s*/g, ",").replace(/\s+/g, " ")
+    .replace(/[.!?;:]+$/, "").trim();
+}
+function expand(s) {
+  return s.replace(/\bwon't\b/g, "will not").replace(/\bshan't\b/g, "shall not").replace(/\bcan't\b/g, "cannot")
+    .replace(/\bcan not\b/g, "cannot").replace(/n't\b/g, " not").replace(/'ll\b/g, " will").replace(/'d\b/g, " would")
+    .replace(/^i 'll/, "i will");
+}
+function same(a, b) { return expand(norm(a)) === expand(norm(b)); }
+function matchAny(val, list) { return (list || []).some(k => same(val, k)); }
+function wrongGapIds(task) { return Object.keys(task.gaps).filter(id => !task.gaps[id].ok); }
+function gapState(taskId, mode, id) { return S.gaps[`${taskId}:${mode}:${id}`] || null; }
+function setGapState(taskId, mode, id, st) { S.gaps[`${taskId}:${mode}:${id}`] = st; save(); }
+function isRepaired(taskId, id) {
+  return ["mistakes", "full"].some(m => { const st = gapState(taskId, m, id); return st && st.status === "right"; });
+}
+function repairedCount() {
+  let n = 0, total = 0;
+  for (const t of Object.values(TASKS)) for (const id of wrongGapIds(t)) { total++; if (isRepaired(t.id, id)) n++; }
+  for (const q of MC) if (q.her !== q.ans) { total++; const st = S.mc[q.id]; if (st && st.right) n++; }
+  return { n, total };
+}
+function taskRepaired(taskId) {
+  if (taskId === "mc") { const w = MC.filter(q => q.her !== q.ans); return { n: w.filter(q => S.mc[q.id] && S.mc[q.id].right).length, total: w.length }; }
+  const t = TASKS[taskId]; const ids = wrongGapIds(t);
+  return { n: ids.filter(id => isRepaired(taskId, id)).length, total: ids.length };
+}
+
+/* =========================================================================
+   VIEWS
+   ========================================================================= */
+function showView(view) {
+  S.ui.view = view; save();
+  document.querySelectorAll(".tab").forEach(b => b.classList.toggle("is-active", b.dataset.view === view));
+  document.querySelectorAll(".view").forEach(v => v.classList.toggle("is-active", v.id === "view-" + view));
+  render(view);
+  window.scrollTo({ top: 0 });
+}
+function render(view) {
+  if (view === "plan") renderPlan();
+  if (view === "fix") renderFix();
+  if (view === "rules") renderRules();
+  if (view === "drills") renderDrills();
+  if (view === "day") renderDay();
+}
+
+/* ---------- PLAN ---------- */
+function renderPlan() {
+  const rep = repairedCount();
+  const drillsRight = DRILLS.filter(d => S.drills[d.id] && S.drills[d.id].status === "right").length;
+  const ruleIds = RULES.flatMap(g => g.items.map(i => i.id));
+  const known = ruleIds.filter(id => S.rules[id]).length;
+  const rows = SECTIONS.map(s => {
+    const lost = s.max - s.got; const r = taskRepaired(s.id);
+    return `<div class="score-row"><b>${s.title}</b><div class="bar" aria-hidden="true"><i style="width:${(s.got / s.max * 100).toFixed(1)}%"></i></div><span class="num">${s.got}/${s.max}<br><span class="lost">−${lost}</span> <span class="small muted">· fixed ${r.n}/${r.total}</span></span></div>`;
+  }).join("");
+  $("#view-plan").innerHTML = `
+    <div class="card hero">
+      <div>
+        <p class="eyebrow">July attempt · 24 Jul 2026</p>
+        <h2>36 lost points – and every one of them is fixable.</h2>
+        <p>Below is every mistake from the July exam. Correct each one yourself, read why it was wrong, then prove the rule on <b>new</b> sentences. The resit will have new texts – but the same traps.</p>
+        <div class="btn-row"><button class="button primary" data-go="fix">Start fixing → Tense</button><button class="button" data-go="drills">New drills</button></div>
+      </div>
+      <div><div class="big-score">39<small> / 75</small></div><p class="muted small">Grade in July (52%). Biggest leaks: Tense −10 · Modals −9 · Theory MC −7.</p></div>
+    </div>
+    <div class="grid grid-4">
+      <div class="metric"><span>Mistakes repaired</span><strong>${rep.n} / ${rep.total}</strong></div>
+      <div class="metric"><span>New drills right</span><strong>${drillsRight} / ${DRILLS.length}</strong></div>
+      <div class="metric"><span>Rules I can explain</span><strong>${known} / ${ruleIds.length}</strong></div>
+      <div class="metric"><span>Resit</span><strong id="mini-count">—</strong></div>
+    </div>
+    <div class="card"><p class="eyebrow">Where the points went</p>${rows}</div>
+    <div class="card">
+      <div class="task-head"><div><p class="eyebrow">Tonight’s route · ≈ 1 h 45</p><h2>Plan for tonight</h2></div><button class="button small ghost" id="plan-reset">Untick all</button></div>
+      <ul class="plan">${PLAN.map(p => `<li class="${S.plan[p.id] ? "done" : ""}"><input type="checkbox" id="${p.id}" ${S.plan[p.id] ? "checked" : ""}><span class="time">${p.time}</span><label for="${p.id}">${p.text}</label></li>`).join("")}</ul>
+      <p class="small muted" style="margin:12px 0 0">Sleep beats a fourth hour of grammar. Stop by 23:00.</p>
+    </div>
+    <div class="note">
+      <p><b>About the answer key.</b> The Moodle review only prints the official solutions for the modal task and the multiple-choice questions. For non-finites, tense and relatives it only shows ✓/✗. Those solutions were reconstructed from the Theory Reader and checked independently three times. Two gaps are less certain (“gleeful” and “regret”) – they carry a <span class="flag">reconstructed</span> tag, and both plausible answers are accepted.</p>
+    </div>`;
+  updateCountdown();
+  document.querySelectorAll("#view-plan [data-go]").forEach(b => b.addEventListener("click", () => { if (b.dataset.go === "fix") S.ui.task = "q2"; showView(b.dataset.go); }));
+  document.querySelectorAll(".plan input").forEach(cb => cb.addEventListener("change", () => { S.plan[cb.id] = cb.checked; save(); cb.closest("li").classList.toggle("done", cb.checked); }));
+  $("#plan-reset").addEventListener("click", () => { S.plan = {}; save(); renderPlan(); });
+}
+
+/* ---------- FIX ---------- */
+function renderFix() {
+  const root = $("#view-fix");
+  const seg = SECTIONS.map(s => {
+    const r = taskRepaired(s.id);
+    return `<button data-task="${s.id}" class="${S.ui.task === s.id ? "is-active" : ""}">${s.short} ${r.n === r.total ? '<span class="tick">✓</span>' : ""}<small>${s.got}/${s.max} · fixed ${r.n}/${r.total}</small></button>`;
+  }).join("");
+  root.innerHTML = `<div class="seg" role="tablist" aria-label="Exam tasks">${seg}</div><div id="task-area"></div>`;
+  root.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => { S.ui.task = b.dataset.task; save(); renderFix(); }));
+  if (S.ui.task === "mc") renderMCTask(); else renderTask(TASKS[S.ui.task]);
+}
+
+function gapLabel(task, id) { return id.replace(/^[A-Z]/, "Gap "); }
+
+function renderTask(task, focusAfter) {
+  const area = $("#task-area");
+  const mode = S.ui.mode[task.id] || "mistakes";
+  const sec = SECTIONS.find(s => s.id === task.id);
+  const r = taskRepaired(task.id);
+  const paraHtml = task.paras.map((p, pi) => {
+    const ids = [];
+    const html = p.replace(/\{\{(\w+)\}\}/g, (m, id) => { ids.push(id); return renderGap(task, id, mode); });
+    const fbs = ids.map(id => renderFeedback(task, id, mode)).filter(Boolean).join("");
+    return `<p class="exam-text">${html}</p><div class="fb-stack">${fbs}</div>`;
+  }).join("");
+  let bankHtml = "";
+  if (task.kind === "select") {
+    const usedNow = Object.keys(task.gaps).map(id => {
+      const g = task.gaps[id];
+      if (mode === "mistakes" && g.ok) return g.key[0];
+      const st = gapState(task.id, mode, id); return st && st.val ? st.val : null;
+    }).filter(Boolean);
+    bankHtml = `<p class="small muted" style="margin:16px 0 0">Word bank from the exam (17 items, 15 gaps):</p><div class="bank">${task.bank.map(b => `<span class="${usedNow.includes(b) ? "used" : ""}">${esc(b)}</span>`).join("")}</div>`;
+  }
+  area.innerHTML = `
+    <div class="card">
+      <div class="task-head">
+        <div><p class="eyebrow">${sec.title} · July ${sec.got}/${sec.max} · fixed ${r.n}/${r.total}</p></div>
+        <div class="toggle" role="group" aria-label="Mode">
+          <button data-mode="mistakes" class="${mode === "mistakes" ? "is-active" : ""}">Only my mistakes</button>
+          <button data-mode="full" class="${mode === "full" ? "is-active" : ""}">Whole text again</button>
+        </div>
+      </div>
+      <p class="instruction">${task.instruction}</p>
+      <p class="small muted">${mode === "mistakes"
+        ? `Green = you had it right in July. <span class="was">red</span> = what you wrote. ${task.kind === "select" ? "Pick the right item" : "Type the correction and press Enter"} – a hint comes first, the answer only if you ask.`
+        : "All gaps are empty – do the whole task like in the exam, then check."}</p>
+      ${paraHtml}
+      ${bankHtml}
+      <div class="task-foot">
+        <span class="small muted">${task.kind === "select" ? "Each choice is checked immediately." : "Enter checks a gap · Check all checks every filled gap."}</span>
+        <div class="btn-row">${task.kind === "select" ? "" : '<button class="button primary small" id="check-all">Check all</button>'}<button class="button ghost small" id="reset-task">Reset this mode</button></div>
+      </div>
+    </div>`;
+
+  area.querySelectorAll(".toggle button").forEach(b => b.addEventListener("click", () => { S.ui.mode[task.id] = b.dataset.mode; save(); renderTask(task); }));
+  area.querySelectorAll("input.gap-input").forEach(inp => {
+    inp.addEventListener("input", () => {
+      const id = inp.dataset.gap; const st = gapState(task.id, mode, id) || { tries: 0 };
+      st.val = inp.value; if (st.status === "wrong") st.status = "pending"; setGapState(task.id, mode, id, st);
+      inp.classList.remove("is-wrong");
+    });
+    inp.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); checkGap(task, inp.dataset.gap, mode, true); } });
+  });
+  area.querySelectorAll("select.gap-input").forEach(sel => sel.addEventListener("change", () => {
+    const id = sel.dataset.gap; const st = gapState(task.id, mode, id) || { tries: 0 };
+    st.val = sel.value; setGapState(task.id, mode, id, st); checkGap(task, id, mode, true);
+  }));
+  area.querySelectorAll("[data-reveal]").forEach(b => b.addEventListener("click", () => {
+    const id = b.dataset.reveal; const st = gapState(task.id, mode, id) || { tries: 0 };
+    st.status = "revealed"; setGapState(task.id, mode, id, st); renderTask(task);
+  }));
+  const ca = $("#check-all");
+  if (ca) ca.addEventListener("click", () => {
+    Object.keys(task.gaps).forEach(id => { const st = gapState(task.id, mode, id); if (st && st.val && st.status !== "right" && st.status !== "revealed") checkGap(task, id, mode, false); });
+    renderTask(task);
+  });
+  $("#reset-task").addEventListener("click", () => {
+    Object.keys(task.gaps).forEach(id => delete S.gaps[`${task.id}:${mode}:${id}`]); save(); renderTask(task);
+  });
+  if (focusAfter) {
+    const el = area.querySelector(`[data-gap="${focusAfter}"]`);
+    if (el) { el.focus({ preventScroll: false }); }
+  }
+}
+
+function isActiveGap(task, id, mode) { return !(mode === "mistakes" && task.gaps[id].ok); }
+
+function renderGap(task, id, mode) {
+  const g = task.gaps[id];
+  const num = `<span class="gapno">${id.replace(/^[A-Z]/, "")}</span>`;
+  const cue = g.cue ? `<span class="cue">(${esc(g.cue)})</span> ` : "";
+  if (!isActiveGap(task, id, mode)) {
+    return `${cue}<span class="gap-fixed" title="Correct in July">${esc(g.her)}</span>`;
+  }
+  const st = gapState(task.id, mode, id) || {};
+  const cls = st.status === "right" ? "is-right" : st.status === "wrong" ? "is-wrong" : st.status === "revealed" ? "is-revealed" : "";
+  const was = mode === "mistakes" && !g.ok ? `<span class="was" aria-label="Your July answer">${esc(g.her)}</span>` : "";
+  const val = st.status === "revealed" && !st.val ? "" : (st.val || "");
+  const label = `Gap ${id.replace(/^[A-Z]/, "")}${g.cue ? ", verb " + g.cue : ""}`;
+  if (task.kind === "select") {
+    const opts = ['<option value="">choose…</option>'].concat(task.bank.map(b => `<option ${b === val ? "selected" : ""}>${esc(b)}</option>`)).join("");
+    return `<span class="gapwrap">${num}${was}<select class="gap-input ${cls}" data-gap="${id}" aria-label="${esc(label)}" ${st.status === "right" ? "disabled" : ""}>${opts}</select></span>`;
+  }
+  return `${cue}<span class="gapwrap">${num}${was}<input class="gap-input ${task.width || ""} ${cls}" data-gap="${id}" value="${esc(val)}" aria-label="${esc(label)}" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" ${st.status === "right" ? "readonly" : ""}></span>`;
+}
+
+function checkGap(task, id, mode, rerender) {
+  const g = task.gaps[id];
+  const st = gapState(task.id, mode, id) || { tries: 0 };
+  const el = document.querySelector(`[data-gap="${id}"]`);
+  const val = el ? el.value : (st.val || "");
+  if (!String(val).trim()) return;
+  st.val = val;
+  if (matchAny(val, g.key)) { st.status = "right"; st.alsoNote = false; }
+  else if (matchAny(val, g.also)) { st.status = "right"; st.alsoNote = true; }
+  else { st.status = "wrong"; st.tries = (st.tries || 0) + 1; }
+  setGapState(task.id, mode, id, st);
+  if (rerender) {
+    let next = null;
+    if (st.status === "right") {
+      const order = task.paras.join(" ").match(/\{\{(\w+)\}\}/g).map(m => m.slice(2, -2));
+      const after = order.slice(order.indexOf(id) + 1).concat(order.slice(0, order.indexOf(id)));
+      next = after.find(x => isActiveGap(task, x, mode) && !((gapState(task.id, mode, x) || {}).status === "right")) || null;
+    } else next = id;
+    renderTask(task, task.kind === "select" ? null : next);
+  }
+}
+
+function renderFeedback(task, id, mode) {
+  const g = task.gaps[id];
+  if (!isActiveGap(task, id, mode)) return "";
+  const st = gapState(task.id, mode, id);
+  if (!st || !st.status || st.status === "pending") return "";
+  const n = id.replace(/^[A-Z]/, "");
+  const head = `Gap ${n}${g.cue ? ` · (${esc(g.cue)})` : ""}`;
+  const keyTxt = esc(g.key[0]);
+  const src = g.page ? `<p class="src">${esc(g.page)}</p>` : "";
+  const flag = g.flag ? `<span class="flag">reconstructed key – both readings accepted${g.also ? ": " + g.also.concat(g.key).filter((v, i, a) => a.indexOf(v) === i).map(esc).join(" / ") : ""}</span>` : "";
+  const others = g.key.filter((k, i) => i > 0 && !(st.val && same(k, st.val)));
+  const alts = others.length ? `<p class="small muted">Also correct: ${others.map(esc).join(" · ")}</p>` : "";
+  const july = !g.ok ? `<p><b>Why “${esc(g.her)}” was wrong:</b> ${g.why || ""}</p>` : `<p class="small muted">You had this one right in July (“${esc(g.her)}”).</p>`;
+  if (st.status === "right") {
+    const model = !same(st.val, g.key[0]) ? `<p class="small">${st.alsoNote ? "<b>Accepted</b> – but the" : "The"} model answer is <b>${keyTxt}</b>.</p>` : "";
+    return `<div class="fb right"><span class="fb-title">✓ ${head} – ${esc(st.val)}</span>${model}${july}<p><b>Rule:</b> ${g.rule}</p>${alts}${flag}${src}</div>`;
+  }
+  if (st.status === "revealed") {
+    const altsRev = g.key.length > 1 ? `<p class="small muted">Also correct: ${g.key.slice(1).map(esc).join(" · ")}</p>` : "";
+    return `<div class="fb revealed"><span class="fb-title">${head} – answer: <span class="ans">${keyTxt}</span></span>${july}<p><b>Rule:</b> ${g.rule}</p>${altsRev}${flag}${src}<p class="small muted">Type it in now to lock it in.</p></div>`;
+  }
+  // wrong
+  const hint = g.hint ? `<p><b>Hint:</b> ${g.hint}</p>` : `<p><b>Rule:</b> ${g.rule}</p>`;
+  const again = (st.tries || 0) >= 2 ? `<p class="small">Still stuck? Look at the hint again – or show the answer.</p>` : "";
+  const sameAsJuly = !g.ok && same(st.val, g.her) ? `<p class="small"><b>That’s exactly your July answer.</b></p>` : "";
+  return `<div class="fb wrong"><span class="fb-title">✗ ${head} – “${esc(st.val)}” is not it yet</span>${sameAsJuly}${hint}${again}<div class="btn-row" style="margin-top:8px"><button class="button small" data-reveal="${id}">Show answer</button></div></div>`;
+}
+
+/* ---------- MC task (theory) ---------- */
+function renderMCTask() {
+  const area = $("#task-area");
+  const list = S.ui.mcAll ? MC : MC.filter(q => q.her !== q.ans);
+  area.innerHTML = `
+    <div class="card" style="margin-bottom:14px">
+      <div class="task-head">
+        <div><p class="eyebrow">Theory &amp; analysis · July 8/15 · fixed ${taskRepaired("mc").n}/${taskRepaired("mc").total}</p><p class="small muted" style="margin:0">Your July choice is tagged <span class="tag red">July</span>. Choose again – the explanation appears after your choice.</p></div>
+        <div class="toggle" role="group" aria-label="Which questions">
+          <button data-mcall="0" class="${!S.ui.mcAll ? "is-active" : ""}">Only my 7 mistakes</button>
+          <button data-mcall="1" class="${S.ui.mcAll ? "is-active" : ""}">All 15</button>
+        </div>
+      </div>
+    </div>
+    ${list.map(q => mcCard(q)).join("")}
+    <div class="btn-row" style="margin-top:14px"><button class="button ghost small" id="mc-reset">Reset choices</button></div>`;
+  area.querySelectorAll("[data-mcall]").forEach(b => b.addEventListener("click", () => { S.ui.mcAll = b.dataset.mcall === "1"; save(); renderMCTask(); }));
+  area.querySelectorAll(".opt").forEach(b => b.addEventListener("click", () => {
+    const q = MC.find(x => x.id === b.dataset.q); const choice = Number(b.dataset.i);
+    S.mc[q.id] = { choice, right: choice === q.ans }; save();
+    renderMCTask();
+    const card = document.getElementById(q.id); if (card) card.scrollIntoView({ block: "nearest" });
+  }));
+  $("#mc-reset").addEventListener("click", () => { S.mc = {}; save(); renderMCTask(); });
+}
+function mcCard(q) {
+  const st = S.mc[q.id];
+  const wasWrong = q.her !== q.ans;
+  const letters = ["a", "b", "c", "d"];
+  const opts = q.opts.map((o, i) => {
+    let cls = "";
+    if (st) { if (i === q.ans && (st.right || st.choice === i)) cls = "is-right"; if (st.choice === i && !st.right) cls = "is-wrong"; if (st && !st.right && i === q.ans && st.reveal) cls = "is-right"; }
+    const july = i === q.her ? `<span class="tag ${wasWrong ? "red" : "green"}">July</span>` : "";
+    return `<button class="opt ${cls}" data-q="${q.id}" data-i="${i}">${letters[i]}. ${esc(o)}${july}</button>`;
+  }).join("");
+  let fb = "";
+  if (st) {
+    fb = st.right
+      ? `<div class="fb right" style="margin-top:10px"><span class="fb-title">✓ Right.</span><p>${q.why}</p><p class="src">${esc(q.page)}</p></div>`
+      : `<div class="fb wrong" style="margin-top:10px"><span class="fb-title">✗ Not this one.</span><p class="small">Think about the rule and choose again.</p></div>`;
+  }
+  return `<div class="card mc" id="${q.id}"><p class="eyebrow">Question ${q.id.replace("mc", "")} ${wasWrong ? '<span class="tag red">wrong in July</span>' : '<span class="tag green">right in July</span>'}</p><p class="mc-q">${esc(q.q)}</p><div class="opts">${opts}</div>${fb}</div>`;
+}
+
+/* ---------- RULES ---------- */
+function renderRules() {
+  const root = $("#view-rules");
+  root.innerHTML = `<div class="card" style="margin-bottom:18px"><p class="eyebrow">Repair kit</p><h2>The rules behind your 36 lost points</h2><p class="muted" style="margin:0">Each card: the rule, then <b style="color:var(--red)">your July slip</b>. Tick “I can explain it” only if you could teach it to someone.</p></div>` +
+    RULES.map(g => `<div class="rule-group"><p class="eyebrow">${g.group}</p><div class="grid grid-2">${g.items.map(r => `
+      <div class="card rule ${S.rules[r.id] ? "is-known" : ""}">
+        <button class="button small ${S.rules[r.id] ? "primary" : "ghost"} know" data-rule="${r.id}">${S.rules[r.id] ? "✓ Got it" : "I can explain it"}</button>
+        <h3>${r.title}</h3>
+        <ul>${r.body.map(b => `<li>${b}</li>`).join("")}</ul>
+        ${r.yours ? `<div class="yours"><b>July:</b> ${r.yours}</div>` : ""}
+        ${r.page ? `<p class="src small muted" style="margin:8px 0 0">${r.page}</p>` : ""}
+      </div>`).join("")}</div></div>`).join("");
+  root.querySelectorAll("[data-rule]").forEach(b => b.addEventListener("click", () => { S.rules[b.dataset.rule] = !S.rules[b.dataset.rule]; save(); renderRules(); }));
+}
+
+/* ---------- DRILLS ---------- */
+const recentDrills = new Set(); // answered in this filter session – stay visible until the filter changes
+function renderDrills(focusId) {
+  const root = $("#view-drills");
+  const cat = S.ui.cat;
+  let list = DRILLS.filter(d => cat === "all" || d.cat === cat);
+  if (S.ui.openOnly) list = list.filter(d => recentDrills.has(d.id) || !(S.drills[d.id] && S.drills[d.id].status === "right"));
+  const right = DRILLS.filter(d => S.drills[d.id] && S.drills[d.id].status === "right").length;
+  const wrongEver = DRILLS.filter(d => S.drills[d.id] && S.drills[d.id].missed).length;
+  root.innerHTML = `
+    <div class="card" style="margin-bottom:16px">
+      <p class="eyebrow">Transfer · new sentences, same traps</p>
+      <h2>${right} / ${DRILLS.length} right</h2>
+      <p class="muted small" style="margin:0">Typed gaps work like Moodle: type exactly what belongs in the gap. Relatives: comma inside the gap (<span class="kbd">, who</span>), contact clause = <span class="kbd">C</span> – exam rule: if C is possible you MUST write C (that/which/who would lose the point). ${wrongEver ? `${wrongEver} drills needed more than one try – they stay in “Only not yet right” until you get them.` : ""}</p>
+    </div>
+    <div class="filters">
+      ${CATS.map(c => `<button class="chip ${cat === c.id ? "is-active" : ""}" data-cat="${c.id}">${c.label}</button>`).join("")}
+      <label class="small" style="margin-left:auto;display:flex;gap:6px;align-items:center"><input type="checkbox" id="open-only" ${S.ui.openOnly ? "checked" : ""}> Only not yet right</label>
+      <button class="button ghost small" id="drill-reset">Reset drills</button>
+    </div>
+    <div id="drill-list">${list.length ? list.map(drillCard).join("") : `<div class="card"><p style="margin:0">Nothing left here – all right. 🎉</p></div>`}</div>`;
+  root.querySelectorAll("[data-cat]").forEach(b => b.addEventListener("click", () => { S.ui.cat = b.dataset.cat; recentDrills.clear(); save(); renderDrills(); }));
+  $("#open-only").addEventListener("change", e => { S.ui.openOnly = e.target.checked; recentDrills.clear(); save(); renderDrills(); });
+  $("#drill-reset").addEventListener("click", () => { S.drills = {}; recentDrills.clear(); save(); renderDrills(); });
+  root.querySelectorAll(".drill input.gap-input").forEach(inp => {
+    inp.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); checkDrill(inp.dataset.drill, inp.value); } });
+    inp.addEventListener("input", () => { const st = S.drills[inp.dataset.drill] || {}; st.val = inp.value; S.drills[inp.dataset.drill] = st; save(); });
+  });
+  root.querySelectorAll("[data-check]").forEach(b => b.addEventListener("click", () => { const inp = root.querySelector(`input[data-drill="${b.dataset.check}"]`); checkDrill(b.dataset.check, inp ? inp.value : ""); }));
+  root.querySelectorAll("[data-dopt]").forEach(b => b.addEventListener("click", () => checkDrill(b.dataset.dopt, Number(b.dataset.i))));
+  root.querySelectorAll("[data-dreveal]").forEach(b => b.addEventListener("click", () => { const st = S.drills[b.dataset.dreveal] || {}; st.reveal = true; st.missed = true; S.drills[b.dataset.dreveal] = st; save(); renderDrills(); }));
+  if (focusId) { const el = root.querySelector(`#d-${focusId}`); if (el) el.scrollIntoView({ block: "nearest" }); }
+}
+// Modal drills list the key first in the data – move it to a varying position (item number mod option count).
+function optionOrder(d) {
+  const idx = d.opts.map((_, i) => i);
+  if (d.cat !== "modal") return idx;
+  const rest = idx.filter(i => i !== d.ans);
+  const pos = Number(d.id.replace(/\D/g, "")) % d.opts.length;
+  rest.splice(pos, 0, d.ans);
+  return rest;
+}
+function drillCard(d) {
+  const st = S.drills[d.id] || {};
+  const catLabel = CATS.find(c => c.id === d.cat).label;
+  let body = "";
+  if (d.type === "type") {
+    const cls = st.status === "right" ? "is-right" : st.status === "wrong" ? "is-wrong" : "";
+    body = `<div class="drill-row"><input class="gap-input ${cls}" data-drill="${d.id}" value="${esc(st.val || "")}" aria-label="Answer" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" ${st.status === "right" ? "readonly" : ""}><button class="button small primary" data-check="${d.id}">Check</button></div>`;
+  } else {
+    body = `<div class="opts">${optionOrder(d).map(i => {
+      const o = d.opts[i];
+      let cls = ""; if (st.status && st.choice === i) cls = st.status === "right" ? "is-right" : "is-wrong";
+      if (st.reveal && i === d.ans) cls = "is-right";
+      return `<button class="opt ${cls}" data-dopt="${d.id}" data-i="${i}">${esc(o)}</button>`;
+    }).join("")}</div>`;
+  }
+  let fb = "";
+  const answer = d.type === "type" ? d.keys[0] : d.opts[d.ans];
+  if (st.status === "right") {
+    const also = st.alsoNote ? ` <span class="small">(accepted – model answer: <b>${esc(d.keys[0])}</b>)</span>` : "";
+    fb = `<div class="fb right"><span class="fb-title">✓ ${esc(d.type === "type" ? st.val : d.opts[st.choice])}</span>${also}<p>${d.why}</p>${d.type === "type" && d.keys.length > 1 ? `<p class="small muted">Also correct: ${d.keys.slice(1).map(esc).join(" · ")}</p>` : ""}${d.page ? `<p class="src">Reader ${esc(d.page)}</p>` : ""}</div>`;
+  } else if (st.reveal) {
+    fb = `<div class="fb revealed"><span class="fb-title">Answer: ${esc(answer)}</span><p>${d.why}</p>${d.page ? `<p class="src">Reader ${esc(d.page)}</p>` : ""}${d.type === "type" ? '<p class="small muted">Type it in to mark it right.</p>' : ""}</div>`;
+  } else if (st.status === "wrong") {
+    fb = `<div class="fb wrong"><span class="fb-title">✗ Not quite – try again.</span><div class="btn-row" style="margin-top:8px"><button class="button small" data-dreveal="${d.id}">Show answer</button></div></div>`;
+  }
+  return `<div class="card drill ${st.status === "right" ? "is-right" : ""}" id="d-${d.id}"><p class="eyebrow">${catLabel}${st.missed ? ' <span class="tag gold">needed a 2nd try</span>' : ""}</p><p class="drill-q">${esc(d.q)}</p>${body}${fb}</div>`;
+}
+function checkDrill(id, val) {
+  const d = DRILLS.find(x => x.id === id); const st = S.drills[id] || {};
+  if (d.type === "type") {
+    if (!String(val).trim()) return;
+    st.val = val;
+    if (matchAny(val, d.keys)) { st.status = "right"; st.alsoNote = false; }
+    else if (matchAny(val, d.also)) { st.status = "right"; st.alsoNote = true; }
+    else { st.status = "wrong"; st.missed = true; }
+  } else {
+    st.choice = val; st.status = val === d.ans ? "right" : "wrong"; if (st.status === "wrong") st.missed = true;
+  }
+  S.drills[id] = st; save();
+  recentDrills.add(id);
+  renderDrills(id);
+}
+
+/* ---------- EXAM DAY ---------- */
+function renderDay() {
+  $("#view-day").innerHTML = `
+    <div class="card">
+      <p class="eyebrow">Friday · 9 Oct · 09:00–11:00 · RUB Online-Exam</p>
+      <h2>Exam-day rules</h2>
+      <table class="simple">
+        <tr><th>When</th><th>Do this</th></tr>
+        <tr><td><b>Before every text</b></td><td>Read the <b>whole</b> text once before filling anything. Both text tasks say “taking the whole context into account”.</td></tr>
+        <tr><td><b>Non-finites</b></td><td>For every gap ask: does the word before it need a preposition? If yes, type it: <span class="kbd">on travelling</span>, <span class="kbd">in listening</span>.</td></tr>
+        <tr><td><b>Tense</b></td><td>Find the narrator’s “now” (will call, regret) vs. the story’s past. Simple past is the default; past perfect only for “earlier than”; progressive for background. If-clauses: look at the main clause first.</td></tr>
+        <tr><td><b>Bracketed adverbs</b></td><td>After the first auxiliary: <span class="kbd">had simply reused</span>, <span class="kbd">would not constantly be</span>; before a simple verb: <span class="kbd">permanently kept</span>.</td></tr>
+        <tr><td><b>Modals</b></td><td>Sure gaps first. Then elimination: if you have used an item twice, check again. Look for signal words: <i>convinced</i> → must · <i>surely … ?</i> → can’t have · <i>…, but</i> → may · <i>better</i> → had · <i>only years later</i> → was to · <i>typical of him</i> → would.</td></tr>
+        <tr><td><b>Relatives</b></td><td>Comma test first. Type the comma <b>into</b> the gap: <span class="kbd">, who</span>. Object in a defining clause → <span class="kbd">C</span>. No antecedent → <span class="kbd">what</span>. many/some … → <span class="kbd">of whom</span>.</td></tr>
+        <tr><td><b>MC</b></td><td>Underline NOT / do not / how many … not. Condition names go by form. No-inversion list: no doubt, in no time, nevertheless, nonetheless …</td></tr>
+        <tr><td><b>Spelling</b></td><td>regre<b>tt</b>ed, sto<b>pp</b>ed, prefe<b>rr</b>ed, trave<b>ll</b>ed (BE). Typos cost the whole point.</td></tr>
+      </table>
+    </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <p class="eyebrow">Time budget · 90 min</p>
+        <table class="simple">
+          <tr><td>Non-finites (15)</td><td>12 min</td></tr>
+          <tr><td>Tense &amp; aspect (20)</td><td>25 min</td></tr>
+          <tr><td>Modals (15)</td><td>15 min</td></tr>
+          <tr><td>Relatives (10)</td><td>10 min</td></tr>
+          <tr><td>Theory MC (15)</td><td>18 min</td></tr>
+          <tr><td>Final check: spelling, commas, prepositions</td><td>10 min</td></tr>
+        </table>
+        <p class="small muted" style="margin:10px 0 0">In July you used the full 90 minutes. Keep 10 minutes for the final check.</p>
+      </div>
+      <div class="card">
+        <p class="eyebrow">Last 10 minutes before you start</p>
+        <ul style="margin:0;padding-left:20px">
+          <li>insist <b>on</b> / interested <b>in</b> / used <b>to</b> + -ing</li>
+          <li>suggest / consider + <b>-ing</b></li>
+          <li>would → if + past · would have → if + past perfect</li>
+          <li>must / can’t have · may … but · had better · needn’t · was to · would (typical)</li>
+          <li>names → comma · object → C · what · of whom</li>
+          <li>contact clause = 0 pronouns · own → my own</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><p><b>Format note.</b> The July exam had 75 points (four text tasks + 15 MC) and no translation part. The mock test had an extra translation part. If translations come up, the full <a href="../">Grammar Sprint</a> trainer has 35 translation prompts.</p></div>`;
+}
+
+/* =========================================================================
+   COUNTDOWN · THEME · INIT
+   ========================================================================= */
+function updateCountdown() {
+  const diff = new Date(EXAM_ISO).getTime() - Date.now();
+  let txt;
+  if (diff <= 0) txt = diff > -2 * 3600e3 ? "Exam in progress – good luck!" : "Exam done";
+  else { const h = Math.floor(diff / 3600e3), m = Math.floor((diff % 3600e3) / 60e3); txt = h >= 24 ? `in ${Math.floor(h / 24)} d ${h % 24} h` : `in ${h} h ${m} min`; }
+  const c = $("#countdown"); if (c) c.textContent = txt;
+  const mc = $("#mini-count"); if (mc) mc.textContent = txt;
+}
+setInterval(updateCountdown, 30000);
+
+(function initTheme() {
+  let t = null; try { t = localStorage.getItem("resitRepair.theme"); } catch (e) {}
+  if (t) document.documentElement.setAttribute("data-theme", t);
+  $("#theme-btn").addEventListener("click", () => {
+    const cur = document.documentElement.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const next = cur === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("resitRepair.theme", next); } catch (e) {}
+  });
+})();
+
+document.querySelectorAll(".tab").forEach(b => b.addEventListener("click", () => showView(b.dataset.view)));
+showView(S.ui.view || "plan");
+updateCountdown();
+</script>
+</body>
+</html>
