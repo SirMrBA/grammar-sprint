@@ -237,6 +237,19 @@ select.gap-input { width: auto; min-width: 11ch; padding-right: 4px; }
 .drill .fb { margin-top: 10px; }
 .drill.is-right { border-color: color-mix(in srgb, var(--ok) 40%, var(--line)); }
 
+/* practice exams */
+.exam-list { display: grid; gap: 14px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 820px) { .exam-list { grid-template-columns: 1fr; } }
+.exam-card h3 { font-family: Georgia, serif; font-size: 1.35rem; font-weight: 500; }
+.exam-bar { position: sticky; top: 64px; z-index: 4; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; padding: 10px 14px; margin-bottom: 16px; background: color-mix(in srgb, var(--panel) 92%, transparent); border: 1px solid var(--line); border-radius: 14px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.exam-bar .timer { font-variant-numeric: tabular-nums; font-weight: 700; }
+.exam-bar .timer.late { color: var(--red); }
+.exam-sec { margin-bottom: 18px; }
+.exam-sec .q-label { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: .8rem; color: var(--muted); border-bottom: 1px solid var(--line); padding-bottom: 6px; margin-bottom: 10px; }
+.key-inline { margin-left: 4px; padding: 0 6px; border-radius: 6px; background: var(--ok-soft); color: var(--ok); font-weight: 700; font-size: .9rem; white-space: nowrap; }
+.res-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 820px) { .res-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.opt.is-chosen { border-color: var(--brand-2); box-shadow: inset 0 0 0 1px var(--brand-2); }
 .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; background: var(--panel-2); border: 1px solid var(--line); border-radius: 6px; padding: 0 6px; }
 table.simple { width: 100%; border-collapse: collapse; font-size: .94rem; }
 table.simple td, table.simple th { text-align: left; padding: 8px 6px; border-top: 1px solid var(--line); vertical-align: top; }
@@ -272,6 +285,7 @@ table.simple th { color: var(--muted); font-weight: 600; font-size: .8rem; borde
     <button class="tab" data-view="fix">Fix my exam</button>
     <button class="tab" data-view="rules">Repair kit</button>
     <button class="tab" data-view="drills">New drills</button>
+    <button class="tab" data-view="exams">Practice exams</button>
     <button class="tab" data-view="day">Exam day</button>
   </nav>
 
@@ -280,12 +294,14 @@ table.simple th { color: var(--muted); font-weight: 600; font-size: .8rem; borde
     <section id="view-fix" class="view"></section>
     <section id="view-rules" class="view"></section>
     <section id="view-drills" class="view"></section>
+    <section id="view-exams" class="view"></section>
     <section id="view-day" class="view stack"></section>
   </main>
 
   <p class="footer">Built from the July attempt review (ZK Grammar BM SoSe 26), the official Grammar BM Theory Reader SoSe 2026 and the Moodle mock test. Progress is saved only in this browser.</p>
 </div>
 
+<script src="exams.js"></script>
 <script>
 /* =========================================================================
    DATA
@@ -731,8 +747,9 @@ const PLAN = [
   { id: "p3", time: "10 min", text: "Fix my exam → <b>Relatives</b> (6) and <b>Non-finites</b> (4)" },
   { id: "p4", time: "10 min", text: "Fix my exam → <b>Theory MC</b> (7 questions)" },
   { id: "p5", time: "15 min", text: "Repair kit: read every card, tick what you could explain to someone else" },
-  { id: "p6", time: "30 min", text: "New drills: all categories once, then <b>Only not yet right</b> until it’s empty" },
-  { id: "p7", time: "5 min", text: "Fix my exam: switch to <b>Whole text again</b> for Tense & Modals – can you do the whole text cleanly?" },
+  { id: "p6", time: "20 min", text: "New drills: Tense and Modals once, then <b>Only not yet right</b>" },
+  { id: "p7", time: "90 min", text: "<b>Practice exam A</b> under real conditions – then go through every red item" },
+  { id: "p9", time: "If fit", text: "Practice exam B or C – only if you are still fresh. Sleep comes first." },
   { id: "p8", time: "Morning", text: "15 min max: Exam day page + only red drills. No new material." }
 ];
 
@@ -740,10 +757,10 @@ const PLAN = [
    STATE
    ========================================================================= */
 const STORE_KEY = "resitRepair.v1";
-let S = { ui: { view: "plan", task: "q2", mode: {}, cat: "all", openOnly: false, mcAll: false }, gaps: {}, mc: {}, drills: {}, rules: {}, plan: {} };
+let S = { ui: { view: "plan", task: "q2", mode: {}, cat: "all", openOnly: false, mcAll: false }, gaps: {}, mc: {}, drills: {}, rules: {}, plan: {}, exams: {} };
 try {
   const raw = localStorage.getItem(STORE_KEY);
-  if (raw) { const saved = JSON.parse(raw); S = Object.assign(S, saved); S.ui = Object.assign({ view: "plan", task: "q2", mode: {}, cat: "all", openOnly: false, mcAll: false }, saved.ui || {}); }
+  if (raw) { const saved = JSON.parse(raw); S = Object.assign(S, saved); S.exams = S.exams || {}; S.ui = Object.assign({ view: "plan", task: "q2", mode: {}, cat: "all", openOnly: false, mcAll: false }, saved.ui || {}); }
 } catch (e) { /* storage unavailable – run in memory */ }
 function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(S)); } catch (e) { /* ignore */ } }
 
@@ -798,6 +815,7 @@ function render(view) {
   if (view === "fix") renderFix();
   if (view === "rules") renderRules();
   if (view === "drills") renderDrills();
+  if (view === "exams") renderExams();
   if (view === "day") renderDay();
 }
 
@@ -817,7 +835,7 @@ function renderPlan() {
         <p class="eyebrow">July attempt · 24 Jul 2026</p>
         <h2>36 lost points – and every one of them is fixable.</h2>
         <p>Below is every mistake from the July exam. Correct each one yourself, read why it was wrong, then prove the rule on <b>new</b> sentences. The resit will have new texts – but the same traps.</p>
-        <div class="btn-row"><button class="button primary" data-go="fix">Start fixing → Tense</button><button class="button" data-go="drills">New drills</button><a class="button" href="Grammar%20BM%20-%20Resit%20Cheat%20Sheet.pdf" target="_blank" rel="noopener">Cheat sheet (PDF)</a></div>
+        <div class="btn-row"><button class="button primary" data-go="fix">Start fixing → Tense</button><button class="button" data-go="exams">Practice exams</button><button class="button" data-go="drills">New drills</button><a class="button" href="Grammar%20BM%20-%20Resit%20Cheat%20Sheet.pdf" target="_blank" rel="noopener">Cheat sheet (PDF)</a></div>
       </div>
       <div><div class="big-score">39<small> / 75</small></div><p class="muted small">Grade in July (52%). Biggest leaks: Tense −10 · Modals −9 · Theory MC −7.</p></div>
     </div>
@@ -829,7 +847,7 @@ function renderPlan() {
     </div>
     <div class="card"><p class="eyebrow">Where the points went</p>${rows}</div>
     <div class="card">
-      <div class="task-head"><div><p class="eyebrow">Tonight’s route · ≈ 1 h 45</p><h2>Plan for tonight</h2></div><button class="button small ghost" id="plan-reset">Untick all</button></div>
+      <div class="task-head"><div><p class="eyebrow">Tonight’s route · ≈ 3 h incl. one practice exam</p><h2>Plan for tonight</h2></div><button class="button small ghost" id="plan-reset">Untick all</button></div>
       <ul class="plan">${PLAN.map(p => `<li class="${S.plan[p.id] ? "done" : ""}"><input type="checkbox" id="${p.id}" ${S.plan[p.id] ? "checked" : ""}><span class="time">${p.time}</span><label for="${p.id}">${p.text}</label></li>`).join("")}</ul>
       <p class="small muted" style="margin:12px 0 0">Sleep beats a fourth hour of grammar. Stop by 23:00.</p>
     </div>
@@ -1143,6 +1161,168 @@ function checkDrill(id, val) {
   renderDrills(id);
 }
 
+/* ---------- PRACTICE EXAMS ---------- */
+const EXAMS = window.RESIT_EXAMS || [];
+const EXAM_MIN = 90;
+let examTimer = null;
+function exState(id) { if (!S.exams[id]) S.exams[id] = { answers: {}, submitted: false, startedAt: null, best: null, history: [] }; return S.exams[id]; }
+function examItems(ex) {
+  const out = [];
+  ex.sections.forEach(sec => {
+    if (sec.kind === "mc") sec.questions.forEach((q, i) => out.push({ sec, key: `${sec.id}:Q${i + 1}`, q, i }));
+    else Object.keys(sec.gaps).forEach(gid => out.push({ sec, key: `${sec.id}:${gid}`, gid, g: sec.gaps[gid] }));
+  });
+  return out;
+}
+function itemRight(item, val) {
+  if (val === undefined || val === null || val === "") return false;
+  if (item.q) return Number(val) === item.q.ans;
+  return matchAny(val, item.g.key) || matchAny(val, item.g.also);
+}
+function scoreExam(ex, st) {
+  const per = {}; let total = 0, max = 0;
+  examItems(ex).forEach(it => {
+    per[it.sec.id] = per[it.sec.id] || { got: 0, max: 0, title: it.sec.short || it.sec.title };
+    per[it.sec.id].max++; max++;
+    if (itemRight(it, st.answers[it.key])) { per[it.sec.id].got++; total++; }
+  });
+  return { total, max, per };
+}
+function answeredCount(ex, st) { return examItems(ex).filter(it => { const v = st.answers[it.key]; return v !== undefined && v !== null && String(v).trim() !== ""; }).length; }
+
+function renderExams() {
+  clearInterval(examTimer);
+  const root = $("#view-exams");
+  if (!EXAMS.length) { root.innerHTML = `<div class="card"><p style="margin:0">The practice exams are still loading – reload the page in a moment.</p></div>`; return; }
+  const open = S.ui.exam && EXAMS.find(e => e.id === S.ui.exam);
+  if (open) return renderExamPaper(open);
+  root.innerHTML = `
+    <div class="card" style="margin-bottom:16px">
+      <p class="eyebrow">Practice exams · July format</p>
+      <h2>Three new exams, ${examItems(EXAMS[0]).length} points each</h2>${EXAMS[0].sections.some(s => s.id === "modals") ? "" : `<p class="note small" style="margin:0 0 10px"><b>The modal part (15 points) is still being checked and will appear here later tonight – just reload the page.</b> Your answers stay saved.</p>`}
+      <p class="muted" style="margin:0">Same structure as the July exam: non-finites (15) · tense &amp; aspect (20) · modals drag-and-drop (15) · relatives (10) · theory MC (15). New texts, same traps. Work like in the real exam – no hints – then press <b>Submit all and finish</b> to see your score and every solution with the rule. The clock shows 90 minutes but never stops you.</p>
+    </div>
+    <div class="exam-list">${EXAMS.map(ex => {
+      const st = exState(ex.id); const n = answeredCount(ex, st); const max = examItems(ex).length;
+      const status = st.submitted ? `Last result: <b>${st.last} / ${max}</b>` : st.startedAt ? `In progress · ${n}/${max} answered` : "Not started";
+      const best = st.best !== null && st.best !== undefined ? `<span class="tag green">best ${st.best}/${max}</span>` : "";
+      return `<div class="card exam-card"><p class="eyebrow">${max} points · 90 min ${best}</p><h3>Practice exam ${ex.id}</h3><p class="small muted" style="margin-top:-2px">${esc(ex.title || "")}</p><p class="small muted">${status}</p>
+        <div class="btn-row">${st.submitted ? `<button class="button primary small" data-exopen="${ex.id}">Review result</button><button class="button small" data-exretake="${ex.id}">Retake</button>` : `<button class="button primary small" data-exopen="${ex.id}">${st.startedAt ? "Continue" : "Start"}</button>`}</div></div>`;
+    }).join("")}</div>
+    <p class="small muted" style="margin-top:14px">Tip: one exam under real conditions tonight is worth more than three half-done ones. Review every red item afterwards.</p>`;
+  root.querySelectorAll("[data-exopen]").forEach(b => b.addEventListener("click", () => { const st = exState(b.dataset.exopen); if (!st.startedAt) st.startedAt = Date.now(); S.ui.exam = b.dataset.exopen; save(); renderExams(); window.scrollTo({ top: 0 }); }));
+  root.querySelectorAll("[data-exretake]").forEach(b => b.addEventListener("click", () => {
+    if (!confirm("Start this exam again? Your answers are cleared (your best score is kept).")) return;
+    const st = exState(b.dataset.exretake); st.answers = {}; st.submitted = false; st.startedAt = Date.now(); S.ui.exam = b.dataset.exretake; save(); renderExams(); window.scrollTo({ top: 0 });
+  }));
+}
+
+function exGapHtml(sec, gid, st, review) {
+  const g = sec.gaps[gid]; const key = `${sec.id}:${gid}`; const val = st.answers[key] || "";
+  const num = `<span class="gapno">${gid.replace(/^[A-Z]/, "")}</span>`;
+  const cue = g.cue ? `<span class="cue">(${esc(g.cue)})</span> ` : "";
+  let cls = "", after = "";
+  if (review) {
+    const ok = itemRight({ g }, val);
+    cls = ok ? "is-right" : "is-wrong";
+    if (!ok) after = `<span class="key-inline">${esc(g.key[0])}</span>`;
+  }
+  const label = `Gap ${gid.replace(/^[A-Z]/, "")}${g.cue ? ", " + g.cue : ""}`;
+  if (sec.kind === "select") {
+    const opts = ['<option value="">choose…</option>'].concat(sec.bank.map(b => `<option ${b === val ? "selected" : ""}>${esc(b)}</option>`)).join("");
+    return `<span class="gapwrap">${num}<select class="gap-input ${cls}" data-exgap="${key}" aria-label="${esc(label)}" ${review ? "disabled" : ""}>${opts}</select>${after}</span>`;
+  }
+  return `${cue}<span class="gapwrap">${num}<input class="gap-input ${sec.width || ""} ${cls}" data-exgap="${key}" value="${esc(val)}" aria-label="${esc(label)}" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" ${review ? "readonly" : ""}>${after}</span>`;
+}
+
+function renderExamPaper(ex) {
+  const root = $("#view-exams");
+  const st = exState(ex.id); const review = st.submitted;
+  const max = examItems(ex).length;
+  let head = "";
+  if (review) {
+    const sc = scoreExam(ex, st);
+    head = `<div class="card" style="margin-bottom:16px"><p class="eyebrow">Practice exam ${ex.id} · result</p>
+      <div class="hero" style="grid-template-columns:auto 1fr"><div class="big-score">${sc.total}<small> / ${sc.max}</small></div>
+      <div><p style="margin:0">${Math.round(sc.total / sc.max * 100)}% · Red gaps show the solution right next to your answer; the rule is listed under each paragraph.</p></div></div>
+      <div class="res-grid" style="margin-top:12px">${Object.values(sc.per).map(p => `<div class="metric"><span>${esc(p.title)}</span><strong>${p.got}/${p.max}</strong></div>`).join("")}</div>
+      <div class="btn-row" style="margin-top:12px"><button class="button small" data-exback>← All exams</button><button class="button small" data-exretake2>Retake this exam</button><label class="small" style="display:flex;gap:6px;align-items:center"><input type="checkbox" id="ex-allnotes" ${S.ui.exAllNotes ? "checked" : ""}> Show rules for correct answers too</label></div></div>`;
+  }
+  const secHtml = ex.sections.map((sec, si) => {
+    const qLabel = sec.kind === "mc" ? `Questions 1–15 · ${sec.title}` : `Question ${si + 1} · ${sec.title}`;
+    if (sec.kind === "mc") {
+      return `<div class="exam-sec" id="exsec-${sec.id}"><div class="card"><div class="q-label"><b>${qLabel}</b><span>1 point each</span></div>${sec.questions.map((q, i) => {
+        const key = `${sec.id}:Q${i + 1}`; const ch = st.answers[key];
+        const opts = q.opts.map((o, oi) => {
+          let cls = "";
+          if (review) { if (oi === q.ans) cls = "is-right"; else if (Number(ch) === oi) cls = "is-wrong"; }
+          else if (ch !== undefined && Number(ch) === oi) cls = "is-chosen";
+          return `<button class="opt ${cls}" data-exmc="${key}" data-i="${oi}" ${review ? "disabled" : ""}>${"abcd"[oi]}. ${esc(o)}</button>`;
+        }).join("");
+        const ok = review && Number(ch) === q.ans;
+        const fb = review && (!ok || S.ui.exAllNotes) ? `<div class="fb ${ok ? "right" : "wrong"}" style="margin-top:8px"><span class="fb-title">${ok ? "✓" : ch === undefined ? "– not answered" : "✗"} Answer: ${"abcd"[q.ans]}</span><p>${esc(q.why)}</p>${q.page ? `<p class="src">${esc(q.page)}</p>` : ""}</div>` : "";
+        return `<div class="mc" style="padding:12px 0;border-top:1px solid var(--line)"><p class="mc-q">${i + 1}. ${esc(q.q)}</p><div class="opts">${opts}</div>${fb}</div>`;
+      }).join("")}</div></div>`;
+    }
+    const paras = sec.paras.map(p => {
+      const ids = [];
+      const html = p.replace(/\{\{(\w+)\}\}/g, (m, gid) => { ids.push(gid); return sec.gaps[gid] ? exGapHtml(sec, gid, st, review) : m; });
+      let notes = "";
+      if (review) {
+        notes = ids.map(gid => {
+          const g = sec.gaps[gid]; if (!g) return "";
+          const val = st.answers[`${sec.id}:${gid}`] || "";
+          const ok = itemRight({ g }, val);
+          if (ok && !S.ui.exAllNotes) return "";
+          const alsoNote = ok && !matchAny(val, g.key) ? ` <span class="small">(accepted – model answer: <b>${esc(g.key[0])}</b>)</span>` : "";
+          const alts = g.key.length > 1 ? `<p class="small muted">Also correct: ${g.key.slice(1).map(esc).join(" · ")}</p>` : "";
+          return `<div class="fb ${ok ? "right" : "wrong"}"><span class="fb-title">${ok ? "✓" : "✗"} Gap ${gid.replace(/^[A-Z]/, "")}${g.cue ? ` (${esc(g.cue)})` : ""}: ${val ? `“${esc(val)}”` : "not answered"}${ok ? "" : ` → <span class="ans">${esc(g.key[0])}</span>`}</span>${alsoNote}<p>${esc(g.rule)}</p>${alts}${g.page ? `<p class="src">${esc(g.page)}</p>` : ""}</div>`;
+        }).join("");
+      }
+      return `<p class="exam-text">${html}</p>${notes ? `<div class="fb-stack">${notes}</div>` : ""}`;
+    }).join("");
+    const bank = sec.kind === "select" ? `<div class="bank" data-bank="${sec.id}">${sec.bank.map(b => `<span data-bankitem="${esc(b)}">${esc(b)}</span>`).join("")}</div>` : "";
+    return `<div class="exam-sec" id="exsec-${sec.id}"><div class="card"><div class="q-label"><b>${qLabel}</b><span>${Object.keys(sec.gaps).length} points</span></div><p class="instruction">${esc(sec.instruction)}</p>${paras}${bank}</div></div>`;
+  }).join("");
+  const bar = review ? "" : `<div class="exam-bar"><div><b>Practice exam ${ex.id}</b> · <span id="ex-answered">${answeredCount(ex, st)}</span>/${max} answered</div><div class="timer" id="ex-timer">90:00</div><div class="btn-row"><button class="button ghost small" data-exback>Pause</button><button class="button primary small" id="ex-submit">Submit all and finish</button></div></div>`;
+  root.innerHTML = head + bar + secHtml + (review ? "" : `<div class="card"><p style="margin:0 0 10px">Finished? Check spelling, commas and prepositions once more – then submit.</p><button class="button primary" id="ex-submit2">Submit all and finish</button></div>`);
+
+  const upd = () => { const a = $("#ex-answered"); if (a) a.textContent = answeredCount(ex, st); markBank(); };
+  const markBank = () => ex.sections.filter(s => s.kind === "select").forEach(sec => {
+    const used = Object.keys(sec.gaps).map(gid => st.answers[`${sec.id}:${gid}`]).filter(Boolean);
+    root.querySelectorAll(`[data-bank="${sec.id}"] span`).forEach(sp => sp.classList.toggle("used", used.includes(sp.dataset.bankitem)));
+  });
+  markBank();
+  root.querySelectorAll("input[data-exgap]").forEach(inp => inp.addEventListener("input", () => { st.answers[inp.dataset.exgap] = inp.value; save(); upd(); }));
+  root.querySelectorAll("select[data-exgap]").forEach(sel => sel.addEventListener("change", () => { st.answers[sel.dataset.exgap] = sel.value; save(); upd(); }));
+  root.querySelectorAll("[data-exmc]").forEach(b => b.addEventListener("click", () => {
+    st.answers[b.dataset.exmc] = Number(b.dataset.i); save();
+    root.querySelectorAll(`[data-exmc="${b.dataset.exmc}"]`).forEach(o => o.classList.toggle("is-chosen", o === b)); upd();
+  }));
+  root.querySelectorAll("[data-exback]").forEach(b => b.addEventListener("click", () => { S.ui.exam = null; save(); renderExams(); window.scrollTo({ top: 0 }); }));
+  const submit = () => {
+    const open = max - answeredCount(ex, st);
+    if (!confirm(open ? `${open} item(s) are still unanswered. Submit anyway?` : "Submit all and finish?")) return;
+    const sc = scoreExam(ex, st);
+    st.submitted = true; st.last = sc.total; st.best = Math.max(st.best || 0, sc.total); st.history = (st.history || []).concat([{ score: sc.total, at: Date.now() }]);
+    save(); renderExamPaper(ex); window.scrollTo({ top: 0 });
+  };
+  ["#ex-submit", "#ex-submit2"].forEach(sel => { const b = $(sel); if (b) b.addEventListener("click", submit); });
+  const re2 = root.querySelector("[data-exretake2]");
+  if (re2) re2.addEventListener("click", () => { if (!confirm("Start this exam again? Your answers are cleared (your best score is kept).")) return; st.answers = {}; st.submitted = false; st.startedAt = Date.now(); save(); renderExamPaper(ex); window.scrollTo({ top: 0 }); });
+  const an = $("#ex-allnotes"); if (an) an.addEventListener("change", () => { S.ui.exAllNotes = an.checked; save(); renderExamPaper(ex); });
+  if (!review) {
+    const tick = () => {
+      const t = $("#ex-timer"); if (!t) { clearInterval(examTimer); return; }
+      const left = EXAM_MIN * 60e3 - (Date.now() - (st.startedAt || Date.now()));
+      const a = Math.abs(left), m = Math.floor(a / 60e3), s2 = Math.floor((a % 60e3) / 1000);
+      t.textContent = (left < 0 ? "+" : "") + `${m}:${String(s2).padStart(2, "0")}` + (left < 0 ? " over time" : " left");
+      t.classList.toggle("late", left < 10 * 60e3);
+    };
+    tick(); clearInterval(examTimer); examTimer = setInterval(tick, 1000);
+  }
+}
+
 /* ---------- EXAM DAY ---------- */
 function renderDay() {
   $("#view-day").innerHTML = `
@@ -1159,6 +1339,7 @@ function renderDay() {
         <tr><td><b>Relatives</b></td><td>Comma test first. Type the comma <b>into</b> the gap: <span class="kbd">, who</span>. Object in a defining clause → <span class="kbd">C</span>. No antecedent → <span class="kbd">what</span>. many/some … → <span class="kbd">of whom</span>.</td></tr>
         <tr><td><b>MC</b></td><td>Underline NOT / do not / how many … not. Condition names go by form. No-inversion list: no doubt, in no time, nevertheless, nonetheless …</td></tr>
         <tr><td><b>Spelling</b></td><td>regre<b>tt</b>ed, sto<b>pp</b>ed, prefe<b>rr</b>ed, trave<b>ll</b>ed (BE). Typos cost the whole point.</td></tr>
+        <tr><td><b>Apostrophe</b></td><td>Moodle only accepts the straight apostrophe <span class="kbd">'</span> in wasn't, can't … – not ’ or ´. German keyboard: Shift + #. (This trainer accepts both, Moodle does not.)</td></tr>
       </table>
     </div>
     <div class="grid grid-2">
