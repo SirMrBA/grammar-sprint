@@ -4,13 +4,13 @@ English-language, iPad-friendly exam trainer for **RUB Grammar BM, Sommersemeste
 
 ## Open online
 
-**GitHub Pages:** <https://sirmrba.github.io/grammar-sprint-sidelya/>
+**GitHub Pages:** <https://sirmrba.github.io/grammar-sprint/>
 
-The source is available in the public repository <https://github.com/SirMrBA/grammar-sprint-sidelya>. The published GitHub Pages website itself is public.
+The source is available in the public repository <https://github.com/SirMrBA/grammar-sprint>. The published GitHub Pages website itself is public.
 
 ## Resit Repair
 
-**Resit:** Friday, 9 October 2026, 09:00–11:00 · <https://sirmrba.github.io/grammar-sprint-sidelya/resit/>
+**Resit:** Friday, 9 October 2026, 09:00–11:00 · <https://sirmrba.github.io/grammar-sprint/resit/>
 
 Single-file trainer in `resit/index.html`, built from the July attempt review:
 

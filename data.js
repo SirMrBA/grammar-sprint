@@ -6,7 +6,7 @@ window.GRAMMAR_DATA = {
     "examLabel": "Fri · 24 Jul · 14:00",
     "durationMinutes": 90,
     "totalPoints": 100,
-    "sourceNote": "Built from the official SoSe 2026 theory reader, Moodle mock-test feedback and new-format practice tasks; cross-checked against Sidelya’s historical quiz chat export."
+    "sourceNote": "Built from the official SoSe 2026 theory reader, Moodle mock-test feedback and new-format practice tasks; cross-checked against historical quiz feedback."
   },
   "categories": [
     {
@@ -2422,7 +2422,7 @@ window.GRAMMAR_DATA = {
       "id": "qta25",
       "section": "tense",
       "category": "Tense & Aspect",
-      "text": "Complete: “This time tomorrow, Sidelya ___ the final revision block.”",
+      "text": "Complete: “This time tomorrow, Alex ___ the final revision block.”",
       "options": [
         "completes yesterday",
         "will be doing",
@@ -3306,7 +3306,7 @@ window.GRAMMAR_DATA = {
       "options": [
         "Students who revise usually improve.",
         "The file C I downloaded is corrupt.",
-        "Sidelya, who studies at RUB, has an exam.",
+        "Alex, who studies at RUB, has an exam.",
         "The person that called left no name."
       ],
       "answer": 2,
