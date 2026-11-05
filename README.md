@@ -6,7 +6,7 @@ English-language, iPad-friendly exam trainer for **RUB Grammar BM, Sommersemeste
 
 **GitHub Pages:** <https://sirmrba.github.io/grammar-sprint-sidelya/>
 
-The source is stored in the private repository <https://github.com/SirMrBA/grammar-sprint-sidelya>. The published GitHub Pages website itself is public.
+The source is available in the public repository <https://github.com/SirMrBA/grammar-sprint-sidelya>. The published GitHub Pages website itself is public.
 
 ## Resit Repair
 

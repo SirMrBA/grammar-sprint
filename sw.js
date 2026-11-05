@@ -1,4 +1,4 @@
-const CACHE_NAME = "grammar-sprint-v3";
+const CACHE_NAME = "grammar-sprint-v4";
 const ASSETS = [
   "./",
   "./index.html",
